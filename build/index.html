@@ -10,67 +10,91 @@
 </head>
 <body>
   <header class="page-header">
-    <nav class="main-nav">
-      <div class="contanier main-nav__wrapper">
-        <a class="main-nav__logo">
-          <img src="img/logo_avto-moto.svg" alt="Логотип автосалона Avto-Moto" width="134" height="55">
-        </a>
-        <ul class="main-nav__list site-list">
-          <li class="site-list__item">
-            <a href="">Автомобили</a>
-            <a href="">Контакты</a>
-            <a href="">Услуги</a>
-            <a href="">Вакансии</a>
-          </li>
-        </ul>
-      </div>
+    <nav class="contanier main-nav">
+      <a class="main-nav__logo">
+        <svg width="134" height="55">
+          <use xlink:href="img/sprite_auto.svg#icon-logo_avto-moto"></use>
+        </svg>
+      </a>
+      <ul class="main-nav__list site-list">
+        <li class="site-list__item">
+          <a href="">Автомобили</a>
+          <a href="">Контакты</a>
+          <a href="">Услуги</a>
+          <a href="">Вакансии</a>
+        </li>
+      </ul>
     </nav>
   </header>
   <main class="page-main">
     <h1 class="visually-hidden">интернет-магазин Avto-Moto</h1>
-    <section class="promo">
+    <section class="contanier promo">
       <h2 class="visually-hidden">Карточка товара</h2>
-      <div class="contanier promo__wrapper">
+      <div class="promo__wrapper">
         <div class="promo__slider slider">
           <h2 class="visually-hidden">Слайдер</h2>
-          <div class="slider__slide">
-            <img src="img/desktop_slide_1.jpg" alt="Изображение автомобиля" width="600" height="375">
+          <div class="slider__wrapper">
+            <picture>
+              <!-- 1х: 1200px; 2x: 2400px -->
+              <source type="image/webp" srcset="img/slide_desktop_1@1x.webp 1x, img/slide_desktop_1@2x.webp 2x">
+              <img class="slider__slide" src="img/slide_desktop_1@1x.jpg" srcset="img/slide_desktop_1@2x.jpg 2x" width="600" height="375" alt="Изображение автомобиля">
+            </picture>
+            <picture>
+              <!-- 1х: 1200px; 2x: 2400px -->
+              <source type="image/webp" srcset="img/slide_desktop_2@1x.webp 1x, img/slide_desktop_2@2x.webp 2x">
+              <img class="slider__slide slider__slide--hidden" src="img/slide_desktop_2@1x.jpg" srcset="img/slide_desktop_2@2x.jpg 2x" width="600" height="375" alt="Изображение автомобиля">
+            </picture>
+            <picture>
+              <!-- 1х: 1200px; 2x: 2400px -->
+              <source type="image/webp" srcset="img/slide_desktop_3@1x.webp 1x, img/slide_desktop_3@2x.webp 2x">
+              <img class="slider__slide slider__slide--hidden" src="img/slide_desktop_3@1x.jpg" srcset="img/slide_desktop_3@2x.jpg 2x" width="600" height="375" alt="Изображение автомобиля">
+            </picture>
           </div>
           <div class="slider__navigation">
-            <div class="slider__button slider__button--left"></div>
-            <div class="slider__button slider__button--right"></div>
+            <div class="slider__button slider__button--disabled">
+              <svg width="52" height="52">
+                <use xlink:href="img/sprite_auto.svg#icon-arrow-left"></use>
+              </svg>
+            </div>
             <ul class="slider__list">
+              <li class="slider__item slider__item--current">
+                <img src="img/thumbnail_desktop_1.jpg" alt="Изображение автомобиля" width="128" height="80">
+              </li>
               <li class="slider__item">
-                <img src="img/desktop_slide_thumbnail_1.jpg" alt="Изображение автомобиля" width="128" height="80">
-                <img src="img/desktop_slide_thumbnail_2.jpg" alt="Изображение автомобиля" width="128" height="80">
-                <img src="img/desktop_slide_thumbnail_3.jpg" alt="Изображение автомобиля" width="128" height="80">
+                <img src="img/thumbnail_desktop_2.jpg" alt="Изображение автомобиля" width="128" height="80">
+              </li>
+              <li class="slider__item">
+                <img src="img/thumbnail_desktop_3.jpg" alt="Изображение автомобиля" width="128" height="80">
               </li>
             </ul>
+            <div class="slider__button">
+              <svg width="52" height="52">
+                <use xlink:href="img/sprite_auto.svg#icon-arrow-right"></use>
+              </svg>
+            </div>
           </div>
         </div>
         <div class="promo__card card">
           <h2 class="visually-hidden">Описание товара</h2>
           <h2 class="card__title">Марпех 11</h2>
-          <div class="card__option option">
-              <ul class="option__list">
-                <li class="option__item">
-                  <span class="option__icon option__icon--fuel"></span>
-                  <p class="option__description">бензин</p>
-                </li>
-                <li class="option__item">
-                  <span class="option__icon option__icon--gear-box"></span>
-                  <p class="option__description">механика</p>
-                </li>
-                <li class="option__item">
-                  <span class="option__icon option__icon--power-ps"></span>
-                  <p class="option__description">100 л.с.</p>
-                </li>
-                <li class="option__item">
-                  <span class="option__icon option__icon--engine-disp"></span>
-                  <p class="option__description">1.4 л</p>
-                </li>
-              </ul>
-          </div>
+            <ul class="card__list">
+              <li class="card__item">
+                <span class="card__icon card__icon--fuel"></span>
+                <p class="card__description">бензин</p>
+              </li>
+              <li class="card__item">
+                <span class="card__icon card__icon--gear-box"></span>
+                <p class="card__description">механика</p>
+              </li>
+              <li class="card__item">
+                <span class="card__icon card__icon--power-ps"></span>
+                <p class="card__description">100 л.с.</p>
+              </li>
+              <li class="card__item">
+                <span class="card__icon card__icon--engine-disp"></span>
+                <p class="card__description">1.4 л</p>
+              </li>
+            </ul>
           <div class="card__price price">
             <b class="price__current">2 300 000 ₽</b>
             <p class="price__previous">2  400 000 ₽</p>
@@ -80,170 +104,205 @@
             <a href="#" class="order__credit button">в кредит от 11 000 ₽</a>
           </div>
         </div>
-        <div class="promo__tabs tabs">
+      </div>
+      <div class="promo__tabs tabs">
           <ul class="tabs__list">
-            <li class="tabs__item features">
-              <a href="" class="features__tab-link">
+            <li class="tabs__item">
+              <a class="tabs__link tabs__link--active">
                 <h3>Характеристики</h3>
               </a>
-              <div class="features__description">
-                <table class="features__list">
-                  <tr>
-                    <td class="features__field">Трансмиссия</td>
-                    <td class="features__value">Роботизированная</td>
-                  </tr>
-                  <tr>
-                    <td class="features__field">Мощность двигателя, л.с.</td>
-                    <td class="features__value">249</td>
-                  </tr>
-                  <tr>
-                    <td class="features__field">Тип двигателя</td>
-                    <td class="features__value">Бензиновый</td>
-                  </tr>
-                  <tr>
-                    <td class="features__field">Привод</td>
-                    <td class="features__value">Полный</td>
-                  </tr>
-                  <tr>
-                    <td class="features__field">Объем двигателя, л</td>
-                    <td class="features__value">2.4</td>
-                  </tr>
-                  <tr>
-                    <td class="features__field">Макс. крутящий момент</td>
-                    <td class="features__value">370/4500</td>
-                  </tr>
-                  <tr>
-                    <td class="features__field">Количество цилиндров</td>
-                    <td class="features__value">4</td>
-                  </tr>
-                </table>
-              </div>
             </li>
-            <li class="tabs__item reviews">
-              <a href="" class="reviews__tab-link">
+            <li class="tabs__item">
+              <a href="" class="tabs__link">
                 <h3>Отзывы</h3>
               </a>
-              <div class="reviews__wrapper">
-                <a href="" class="reviews__button button">оставить отзыв</a>
-                <ul class="reviews__list">
-                  <li class="reviews__item">
-                    <h3 class="reviews__author">Борис Иванов</h3>
-                    <div class="reviews__opinion">
-                      <b class="reviews__title reviews__title--advantages">Достоинства</b>
-                      <p class="reviews__description">мощность, внешний вид</p>
-                    </div>
-                    <div class="reviews__opinion">
-                      <b class="reviews__title reviews__title--disadvantages">Недостатки</b>
-                      <p class="reviews__description">Слабые тормозные колодки (пришлось заменить)</p>
-                    </div>
-                    <div class="reviews__opinion">
-                      <h3 class="reviews__title">Комментарий</h3>
-                      <p class="reviews__description">
-                        Взяли по трейд-ин, на выгодных условиях у дилера.
-                        Стильная внешка и крут по базовым характеристикам.
-                        Не думал, что пересяду на китайский автопром, но сейчас гоняю и понимаю, что полностью доволен.
-                      </p>
-                    </div>
-                    <div class="reviews__rating rating">
-                      <ul class="rating__list">
-                        <li class="rating__item"></li>
-                        <li class="rating__item"></li>
-                        <li class="rating__item"></li>
-                        <li class="rating__item"></li>
-                        <li class="rating__item"></li>
-                      </ul>
-                      <a class="reviews__rating-link">Советует</a>
-                    </div>
-                    <div class="reviews__activity">
-                      <p class="reviews__activity">1 минуту назад</p>
-                      <a class="reviews__activity-reply">Ответить</a>
-                    </div>
-                  </li>
-                </ul>
-              </div>
             </li>
-            <li class="tabs__item contacts">
-              <a href="" class="contacts__tab-link">
+            <li class="tabs__item">
+              <a href="" class="tabs__link">
                 <h3>Контакты</h3>
               </a>
-              <div class="contacts__wrapper">
-                <ul class="contacts__list">
-                  <li class="contacts__item">
-                    <h3 class="contacts__title">Адрес</h3>
-                    <p class="contacts__subtitle">Санкт-Петербург, набережная реки Карповки, дом 5</p>
-                  </li>
-                  <li class="contacts__item">
-                    <h3 class="contacts__title">Режим работы</h3>
-                    <p class="contacts__subtitle">Ежедневно, с 10:00 до 21:00</p>
-                  </li>
-                  <li class="contacts__item">
-                    <h3 class="contacts__title">Телефон</h3>
-                    <a class="contacts__subtitle" href="tel:88003335599">8 (800) 333-55-99</a>
-                  </li>
-                  <li class="contacts__item">
-                    <h3 class="contacts__title">E-mail</h3>
-                    <a class="contacts__subtitle" href="mailto:info@avto-moto.ru">info@avto-moto.ru</a>
-                  </li>
-                </ul>
-                <div class="contacts__map">
-                  <img src="img/map.jpg" alt="Геолокация интернет-магазина Avto-Moto" width="431" height="271">
-                </div>
-              </div>
             </li>
           </ul>
-        </div>
+          <div class="features ">
+            <table class="features__list">
+              <tr>
+                <td class="features__field">Трансмиссия</td>
+                <td class="features__value">Роботизированная</td>
+              </tr>
+              <tr>
+                <td class="features__field">Мощность двигателя, л.с.</td>
+                <td class="features__value">249</td>
+              </tr>
+              <tr>
+                <td class="features__field">Тип двигателя</td>
+                <td class="features__value">Бензиновый</td>
+              </tr>
+              <tr>
+                <td class="features__field">Привод</td>
+                <td class="features__value">Полный</td>
+              </tr>
+              <tr>
+                <td class="features__field">Объем двигателя, л</td>
+                <td class="features__value">2.4</td>
+              </tr>
+              <tr>
+                <td class="features__field">Макс. крутящий момент</td>
+                <td class="features__value">370/4500</td>
+              </tr>
+              <tr>
+                <td class="features__field">Количество цилиндров</td>
+                <td class="features__value">4</td>
+              </tr>
+            </table>
+          </div>
+          <div class="reviews ">
+            <a href="" class="reviews__button button">оставить отзыв</a>
+            <ul class="reviews__list">
+              <li class="reviews__item">
+                <h3 class="reviews__author">Борис Иванов</h3>
+                <div class="reviews__opinion">
+                  <p class="reviews__title reviews__title--advantages">Достоинства</p>
+                  <p class="reviews__description">мощность, внешний вид</p>
+                </div>
+                <div class="reviews__opinion">
+                  <p class="reviews__title reviews__title--disadvantages">Недостатки</p>
+                  <p class="reviews__description">Слабые тормозные колодки (пришлось заменить)</p>
+                </div>
+                <div class="reviews__opinion reviews__opinion--comment">
+                  <p class="reviews__title">Комментарий</p>
+                  <p class="reviews__description">
+                    Взяли по трейд-ин, на выгодных условиях у дилера.
+                    Стильная внешка и крут по базовым характеристикам.
+                    Не думал, что пересяду на китайский автопром, но сейчас гоняю и понимаю, что полностью доволен.
+                  </p>
+                </div>
+                <div class="reviews__rating rating">
+                  <ul class="rating__list">
+                    <li class="rating__item"></li>
+                    <li class="rating__item"></li>
+                    <li class="rating__item"></li>
+                    <li class="rating__item"></li>
+                    <li class="rating__item"></li>
+                  </ul>
+                  <a class="reviews__rating-link">Советует</a>
+                </div>
+                <div class="reviews__feedback">
+                  <p class="reviews__activity">1 минуту назад</p>
+                  <a class="reviews__activity-reply">Ответить</a>
+                </div>
+              </li>
+              <li class="reviews__item">
+                <h3 class="reviews__author">Марсель Исмагилов</h3>
+                <div class="reviews__opinion">
+                  <p class="reviews__title reviews__title--advantages">Достоинства</p>
+                  <p class="reviews__description">Cтиль, комфорт, управляемость</p>
+                </div>
+                <div class="reviews__opinion">
+                  <p class="reviews__title reviews__title--disadvantages">Недостатки</p>
+                  <p class="reviews__description">Дорогой ремонт и обслуживание</p>
+                </div>
+                <div class="reviews__opinion reviews__opinion--comment">
+                  <p class="reviews__title">Комментарий</p>
+                  <p class="reviews__description">
+                    Дизайн отличный, управление просто шикарно, ощущения за рулём такой машины особые. Но ремонт очень дорогой. Пару месяцев назад пришлось менять двигатель. По стоимости вышло как новый автомобиль. Так что, если покупать эту машину, надо быть готовым к большим расходам на обслуживание.
+                  </p>
+                </div>
+                <div class="reviews__rating rating">
+                  <ul class="rating__list">
+                    <li class="rating__item"></li>
+                    <li class="rating__item"></li>
+                    <li class="rating__item"></li>
+                    <li class="rating__item"></li>
+                    <li class="rating__item"></li>
+                  </ul>
+                  <a class="reviews__rating-link">Советует</a>
+                </div>
+                <div class="reviews__feedback">
+                  <p class="reviews__activity">1 минуту назад</p>
+                  <a class="reviews__activity-reply">Ответить</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="contacts ">
+            <ul class="contacts__list">
+              <li class="contacts__item">
+                <h3 class="contacts__title">Адрес</h3>
+                <p class="contacts__subtitle">Санкт-Петербург,<br> набережная реки Карповки, дом 5</p>
+              </li>
+              <li class="contacts__item">
+                <h3 class="contacts__title">Режим работы</h3>
+                <p class="contacts__subtitle">Ежедневно, с 10:00 до 21:00</p>
+              </li>
+              <li class="contacts__item">
+                <h3 class="contacts__title">Телефон</h3>
+                <a class="contacts__subtitle" href="tel:88003335599">8 (800) 333-55-99</a>
+              </li>
+              <li class="contacts__item">
+                <h3 class="contacts__title">E-mail</h3>
+                <a class="contacts__subtitle" href="mailto:info@avto-moto.ru">info@avto-moto.ru</a>
+              </li>
+            </ul>
+            <div class="contacts__map">
+              <img src="img/map.jpg" alt="Геолокация интернет-магазина Avto-Moto" width="431" height="271">
+            </div>
+          </div>
       </div>
     </section>
   </main>
   <footer class="page-footer">
-    <nav class="page-footer__nav">
-      <div class="contanier page-footer__wrapper">
-        <ul class="page-footer__list site-list">
-          <li class="site-list__item">
-            <a href="">Корпоративным клиентам</a>
-            <a href="">Клиентам</a>
-            <a href="">Аренда авто</a>
-            <a href="">Каршеринг</a>
-            <a href="">Как продать авто</a>
-            <a href="">Traid-in</a>
-            <a href="">Test draiv</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </footer>
-
-  <section class="modal modal__review">
-    <h2 class="modal__title">Оставить отзыв</h2>
-    <form class="modal__form" action="https://echo.htmlacademy.ru" method="post">
-    <div class="modal__item">
-      <label class="visually-hidden" for="user-name">Имя</label>
-      <input class="modal__user-name" id="user-name" type="text" name="user-name" placeholder="Имя" required="">
-    </div>
-    <div class="modal__item rating">
-      <p>Оцените товар:</p>
-      <ul class="rating__list">
-        <li class="rating__item rating__item--modal"></li>
-        <li class="rating__item rating__item--modal"></li>
-        <li class="rating__item rating__item--modal"></li>
-        <li class="rating__item rating__item--modal"></li>
-        <li class="rating__item rating__item--modal "></li>
+    <div class="contanier page-footer__wrapper">
+      <ul class="contanier page-footer__list">
+        <li class="page-footer__item">
+          <a href="">Корпоративным клиентам</a>
+          <a href="">Клиентам</a>
+          <a href="">Аренда авто</a>
+          <a href="">Каршеринг</a>
+          <a href="">Как продать авто</a>
+          <a href="">Traid-in</a>
+          <a href="">Test drive</a>
+        </li>
       </ul>
     </div>
-    <div class="modal__item">
-      <label class="visually-hidden" for="advantages">Достоинства</label>
-      <input class="modal__advantages" id="advantages" type="text" name="advantages" placeholder="Достоинства">
-    </div>
-    <div class="modal__item">
-      <label class="visually-hidden" for="disadvantages">Недостатки</label>
-      <input class="modal__disadvantages" id="disadvantages" type="text" name="disadvantages" placeholder="Недостатки">
-    </div>
-    <div class="modal__item">
-      <label class="visually-hidden" for="comment">Комментарий</label>
-      <textarea class="modal__comment" name="comment" id="comment" placeholder="Комментарий" required=""></textarea>
-    </div>
-    <button class="button modal__button" type="submit">оставить отзыв</button>
-  </form>
+  </footer>
+
+  <section class="modal">
+    <h2 class="modal__title">Оставить отзыв</h2>
+    <form class="modal__form" action="https://echo.htmlacademy.ru" method="post">
+      <div class="modal__wrapper">
+        <div class="modal__item modal__item--required modal__item--error">
+          <label class="visually-hidden" for="user-name">Имя</label>
+          <input class="modal__input modal__input--error" id="user-name" type="text" name="user-name" placeholder="Имя" required="">
+        </div>
+        <div class="modal__item">
+          <label class="visually-hidden" for="advantages">Достоинства</label>
+          <input class="modal__input" id="advantages" type="text" name="advantages" placeholder="Достоинства">
+        </div>
+        <div class="modal__item">
+          <label class="visually-hidden" for="disadvantages">Недостатки</label>
+          <input class="modal__input" id="disadvantages" type="text" name="disadvantages" placeholder="Недостатки">
+        </div>
+      </div>
+      <div class="modal__wrapper">
+        <div class="modal__item rating">
+          <div class="rating__wrapper">
+            <p>Оцените товар:</p>
+            <ul class="rating__list">
+              <li class="rating__item rating__item--modal"></li>
+              <li class="rating__item rating__item--modal"></li>
+              <li class="rating__item rating__item--modal"></li>
+              <li class="rating__item rating__item--modal"></li>
+              <li class="rating__item rating__item--modal "></li>
+            </ul>
+          </div>
+        </div>
+        <div class="modal__item modal__item--required">
+          <label class="visually-hidden" for="comment">Комментарий</label>
+          <textarea class="modal__textarea modal__textarea--error" name="comment" id="comment" placeholder="Комментарий" required=""></textarea>
+        </div>
+      </div>
+      <button class="button modal__button" type="submit">оставить отзыв</button>
+    </form>
     <button class="modal__close" type="button">
       <span class="visually-hidden">Закрыть</span>
     </button>

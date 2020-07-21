@@ -1,4 +1,23 @@
 .site-list {
-  &__item {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  &__item a {
+    margin-left: 70px;
+    font-weight: 600;
+    line-height: 22px;
+    color: #48494d;
+  }
+
+  &__item a[href] {
+    &:hover {
+      color: #d12136;
+    }
+
+    &:active {
+      color: #48494d;
+      opacity: 0.3;
+    }
   }
 }

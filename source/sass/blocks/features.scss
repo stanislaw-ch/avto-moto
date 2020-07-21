@@ -1,12 +1,29 @@
 .features {
-  &__description {
+  &--hidden {
+    display: none;
   }
-  &__field {
-  }
+
   &__list {
+    width: 590px;
   }
-  &__tab-link {
+
+  // &__list tr {
+  //   border-spacing: 0;
+  //   border-collapse: collapse;
+  // }
+
+  &__field {
+    padding: 17px 0 8px 0;
+
+    border-bottom: 1px solid #d7d9df;
   }
+
   &__value {
+    padding: 17px 0 8px 0;
+
+    text-align: right;
+    color: #000000;
+
+    border-bottom: 1px solid #d7d9df;
   }
 }

@@ -1,8 +1,48 @@
 .rating {
+  display: flex;
+  align-items: center;
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    padding-top: 10px;
+  }
+
+  &__list {
+    display: flex;
+    margin: 0;
+
+    padding: 0;
+    list-style: none;
+  }
+
   &__item {
+    width: 17px;
+    height: 16px;
+
+    margin-right: 3px;
+
+    background-image: url("../../img/icon_rating-star.svg");
+
+    cursor: pointer;
+
     &--modal {
+      width: 27px;
+      height: 27px;
+      margin-left: 4px;
+      background-size: 27px 27px;
     }
   }
-  &__list {
-  }
+}
+
+.rating p {
+  margin: 0;
+
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 20px;
+  color: #000000;
 }

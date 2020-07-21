@@ -1,10 +1,17 @@
 .promo {
-  &__card {
+  &__wrapper {
+    display: flex;
+    margin-bottom: 85px;
   }
+
   &__slider {
   }
-  &__tabs {
+
+  &__card {
+    margin-left: 55px;
   }
-  &__wrapper {
+
+  &__tabs {
+    margin-bottom: 140px;
   }
 }

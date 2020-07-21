@@ -1,10 +1,86 @@
 .card {
-  &__option {
-  }
-  &__order {
-  }
-  &__price {
-  }
   &__title {
+    margin: -10px 0 26px 3px;
+
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 30px;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+
+    width: 285px;
+    margin: 0 0 37px 0;
+    padding: 0 0 0 10px;
+
+    list-style: none;
+  }
+
+  &__item {
+    position: relative;
+    padding: 40px 0 0 0;
+  }
+
+  &__icon {
+    position: absolute;
+    content: "";
+    top: 0;
+
+    &--fuel {
+      left: 2px;
+
+      width: 53px;
+      height: 40px;
+
+      background-image: url("../img/icon_type-engine.svg");
+    }
+
+    &--gear-box {
+      left: 18px;
+
+      width: 40px;
+      height: 40px;
+
+      background-image: url("../img/icon_gear-box.svg");
+    }
+
+    &--power-ps {
+      left: 9px;
+
+      width: 40px;
+      height: 40px;
+
+      background-image: url("../img/icon_power-ps.svg");
+    }
+
+    &--engine-disp {
+      left: 0;
+
+      width: 40px;
+      height: 40px;
+
+      background-image: url("../img/icon_engine-disp.svg");
+    }
+  }
+
+
+  &__description {
+    margin: 0;
+
+    color: rgba(72, 73, 77, 0.5);
+  }
+
+  &__price {
+    display: flex;
+    align-items: center;
+    margin-bottom: 37px;
+  }
+
+  &__order {
+    display: flex;
+    flex-direction: column;
+    margin-right: auto;
   }
 }

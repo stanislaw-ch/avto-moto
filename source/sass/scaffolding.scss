@@ -1,53 +1,64 @@
-// @font-face {
-//   font-family: "PT Sans";
-//   src: url("../fonts/ptsans.woff2") format("woff2"), url("../fonts/ptsans.woff") format("woff");
-//   font-style: normal;
-//   font-weight: normal;
-//   font-display: swap;
-// }
+@font-face {
+  font-family: "Open Sans Regular";
+  src: url("../fonts/OpenSans-Regular.woff2") format("woff2"), url("../fonts/OpenSans-Regular.woff") format("woff");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
 
-// @font-face {
-//   font-family: "PT Sans Bold";
-//   src: url("../fonts/ptsansbold.woff2") format("woff2"), url("../fonts/ptsansbold.woff") format("woff");
-//   font-style: normal;
-//   font-weight: bold;
-//   font-display: swap;
-// }
+@font-face {
+  font-family: "Open Sans Bold";
+  src: url("../fonts/OpenSans-Bold.woff2") format("woff2"), url("../fonts/OpenSans-Bold.woff") format("woff");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
 
-// body {
-//   min-width: 320px;
-//   margin: 0 auto;
-//   padding: 0;
-//   font-size: 14px;
-//   text-transform: uppercase;
-//   font-family: "PT Sans", "Arial", sans-serif;
-//   color: #333333;
-//   background-color: #f2f2f2;
-// }
+@font-face {
+  font-family: "Open Sans SemiBold";
+  src: url("../fonts/OpenSans-SemiBold.woff2") format("woff2"), url("../fonts/OpenSans-SemiBold.woff") format("woff");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
 
-// a {
-//   text-decoration: none;
-// }
+body {
+  // min-width: 1920px;
+  min-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
 
-// img {
-//   max-width: 100%;
-//   height: auto;
-// }
+  font-size: 16px;
+  line-height: 22px;
+  font-family: "Open Sans Regular", "Arial", sans-serif;
+  color: #48494d;
 
-// .visually-hidden:not(:focus):not(:active),
-// input[type="checkbox"].visually-hidden,
-// input[type="radio"].visually-hidden {
-//   position: absolute;
+  background-color: #ffffff;
+}
 
-//   width: 1px;
-//   height: 1px;
-//   margin: -1px;
-//   border: 0;
-//   padding: 0;
+a {
+  text-decoration: none;
+}
 
-//   white-space: nowrap;
+img {
+  max-width: 100%;
+  height: auto;
+}
 
-//   clip-path: inset(100%);
-//   clip: rect(0 0 0 0);
-//   overflow: hidden;
-// }
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}

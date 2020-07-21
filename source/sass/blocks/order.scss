@@ -1,6 +1,41 @@
 .order {
-  &__credit {
-  }
   &__request {
+    margin-right: auto;
+    margin-bottom: 12px;
+
+    color: #ffffff;
+
+    background-color: #d12136;
+
+    &:hover {
+      background-color: #bd0c21;
+    }
+
+    &:active {
+      color: #dadbdd;
+      background-color: #bd0c21;
+    }
   }
+
+
+  &__credit {
+    box-sizing: border-box;
+    margin-right: auto;
+
+    color: #d12136;
+
+    border: 1px solid #d12136;
+
+    &:hover {
+      color: #ffffff;
+
+      background-color: #d12136;
+    }
+
+    &:active {
+      color: #dadbdd;
+      background-color: #bd0c21;
+    }
+  }
+
 }

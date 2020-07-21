@@ -1,6 +1,30 @@
 .price {
   &__current {
+    font-weight: bold;
+    font-size: 35px;
+    line-height: 48px;
   }
+
   &__previous {
+    position: relative;
+    margin: 0 0 0 30px;
+
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 27px;
+
+    color: rgba(72, 73, 77, 0.5);
+
+    &::before {
+      position: absolute;
+      content: "";
+      left: -5px;
+      top: 13px;
+
+      width: 117px;
+      transform: rotate(355deg);
+
+      border-bottom: 1px solid #a3a4a6;
+    }
   }
 }

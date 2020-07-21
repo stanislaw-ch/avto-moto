@@ -1,6 +1,59 @@
 .tabs {
+  &__list {
+    display: flex;
+
+    margin-top: 0;
+    margin-bottom: 8px;
+
+    align-items: center;
+    padding: 0;
+    list-style: none;
+  }
+
   &__item {
   }
-  &__list {
+
+  &__item a[href] {
+    &:hover {
+      color: #ffffff;
+
+      background-color: #d12136;
+      border: 1px solid #d12136;
+    }
+
+    &:active {
+      color: #dadbdd;
+      background-color: #bd0c21;
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 195px;
+    height: 50px;
+
+    color: #48494d;
+
+    border: 1px solid #d7d9df;
+
+    &--active {
+      color: #ffffff;
+
+      background-color: #d12136;
+      border: 1px solid #d12136;
+
+      pointer-events: none;
+    }
+  }
+
+  &__link h3 {
+    margin: 0;
+
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 27px;
   }
 }

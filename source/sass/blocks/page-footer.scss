@@ -1,8 +1,35 @@
 .page-footer {
+  background-color: #f5f5f9;
+
   &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
   }
-  &__nav {
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
   }
+
+  &__item a {
+    color: #48494d;
+  }
+
+  &__item a[href] {
+    &:hover {
+      color: #d12136;
+    }
+
+    &:active {
+      color: #48494d;
+      opacity: 0.3;
+    }
+  }
+
   &__wrapper {
+    display: flex;
+    align-items: center;
+    min-height: 82px;
   }
 }

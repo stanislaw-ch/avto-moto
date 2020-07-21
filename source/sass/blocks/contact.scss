@@ -1,16 +1,39 @@
 .contacts {
-  &__item {
+  &--hidden {
+    display: none;
   }
+
+  display: flex;
+  justify-content: space-between;
+
+  width: 780px;
+  padding-top: 20px;
+
   &__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    list-style: none;
   }
-  &__map {
-  }
-  &__subtitle {
-  }
-  &__tab-link {
-  }
+
+  // &__item {
+  // }
+
   &__title {
+    margin: 0 0 5px 0;
+    color: #1a212f;
   }
-  &__wrapper {
+
+  &__subtitle {
+    margin: 0;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    color: #000000;
+  }
+
+  &__map {
   }
 }

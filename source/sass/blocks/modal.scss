@@ -1,22 +1,166 @@
 .modal {
-  &__advantages {
+  position: relative;
+  box-sizing: border-box;
+  width: 700px;
+  height: 415px;
+  padding: 31px 35px 31px 35px;
+
+  background-color: #f5f5f9;
+
+  &--hidden {
+    display: none;
   }
-  &__button {
-  }
-  &__close {
-  }
-  &__comment {
-  }
-  &__disadvantages {
-  }
-  &__form {
-  }
-  &__item {
-  }
-  &__review {
-  }
+
   &__title {
+    margin: 0 0 45px 0;
+    text-align: center;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 34px;
   }
-  &__user-name {
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    margin-bottom: 33px;
+
+    height: 185px;
+  }
+
+  &__form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &__item {
+    position: relative;
+
+    &--error {
+      border: 1px solid #ff0000;
+
+      &::before {
+        position: absolute;
+        content: "Пожалуйста, заполните поле";
+
+        top: -25px;
+        left: 0;
+
+        color: #ff0000;
+      }
+    }
+
+    &--required {
+      &::after {
+        position: absolute;
+        content: "*";
+
+        top: 10px;
+        left: 10px;
+
+        color: #ff0000;
+      }
+    }
+  }
+
+  &__input {
+    position: relative;
+    box-sizing: border-box;
+    width: 300px;
+    height: 50px;
+    margin: 0;
+    padding: 15px 25px;
+
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 19px;
+    background: #ffffff;
+    border: 1px solid rgba(72, 73, 77, 0.2);
+  }
+
+
+  &__textarea {
+    box-sizing: border-box;
+    display: block;
+    width: 300px;
+    height: 120px;
+    resize: none;
+
+    margin: 0;
+    padding: 15px 25px;
+
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 19px;
+
+    background: #ffffff;
+    border: 1px solid rgba(72, 73, 77, 0.2);
+  }
+
+  &__button {
+    margin: auto;
+
+    color: #ffffff;
+    border: none;
+
+    background-color: #d12136;
+
+    cursor: pointer;
+
+    &:hover {
+      background-color: #bd0c21;
+    }
+
+    &:active {
+      color: #dadbdd;
+      background-color: #bd0c21;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+
+    width: 15px;
+    height: 15px;
+
+    border: 0;
+
+    cursor: pointer;
+
+    &:hover::before,
+    &:hover::after {
+      background-color: #d12136;
+    }
+
+    &:active::before,
+    &:active::after {
+      background-color: #bd0c21;
+    }
+
+    &::before,
+    &::after {
+      content: "";
+
+      position: absolute;
+      top: 6px;
+      left: -2px;
+
+      width: 19px;
+      height: 3px;
+
+      background-color: #9f9e9e;
+    }
+
+    &::before {
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+    }
   }
 }
