@@ -1,4 +1,5 @@
 .slider {
+  user-select: none;
   // &__wrapper {
   // }
 
@@ -44,6 +45,10 @@
     }
   }
 
+  &__button svg {
+    z-index: -1;
+  }
+
   &__list {
     display: flex;
     align-items: center;
@@ -54,19 +59,20 @@
   }
 
   &__item {
+    display: block;
     margin-right: 20px;
 
     &:last-child {
       margin-right: 0;
     }
 
-    &:hover {
-      border: 5px solid #d12136;
-    }
+    // &:hover {
+    //   border: 5px solid #d12136;
+    // }
 
-    &:active {
-      opacity: 0.5;
-    }
+    // &:active {
+    //   opacity: 0.5;
+    // }
 
     &--current {
       border: 5px solid #d12136;
@@ -76,6 +82,7 @@
 
 
   &__item img {
+    z-index: -1;
     display: block;
   }
 }
