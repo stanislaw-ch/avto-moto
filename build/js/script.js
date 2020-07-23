@@ -21,6 +21,10 @@ var sliderButtonRight = slider.querySelector('.slider__button--right');
 var sliderButtons = slider.querySelectorAll('.slider__button');
 var sliderThumbs = slider.querySelectorAll('.slider__item');
 
+var tabs = document.querySelector('.promo__tabs');
+var tabslink = tabs.querySelectorAll('.tabs__link');
+var tabsElement = tabs.querySelectorAll('.tabs__element');
+
 var position = {
   getMin: 0,
   getMax: sliderThumbs.length - 1
@@ -76,28 +80,27 @@ var onButtonClick = function (evt) {
   }
 };
 
-// var onTumbsClick = function (evt) {
-// if (!evt.target.classList.contains('slider__item--current')) {
-// evt.preventDefault();
-// console.log(sliderPosition);
-
-// for (i = 0; i < ) {
-//     sliderPuctures[item].classList.remove('slider__slide--hidden');
-//   }
-// }
-// };
-
 var sliderButtonListener = function () {
   sliderButtons.forEach(function (item) {
     item.addEventListener('click', onButtonClick);
   });
 };
 
-// var sliderTumbsListener = function () {
-//   sliderThumbs.forEach(function (item) {
-//     item.addEventListener('click', onTumbsClick);
-//   });
-// };
+var onTabClickChange = function (link, element) {
+  link.addEventListener('click', function () {
+    for (var i = 0; i < tabsElement.length; i++) {
+      tabsElement[i].classList.add('tabs__element--hidden');
+    }
+    for (var j = 0; j < tabslink.length; j++) {
+      tabslink[j].classList.remove('tabs__link--active');
+    }
+    element.classList.remove('tabs__element--hidden');
+    link.classList.add('tabs__link--active');
+  });
+};
+
+for (var i = 0; i < tabslink.length; i++) {
+  onTabClickChange(tabslink[i], tabsElement[i]);
+}
 
 sliderButtonListener();
-// sliderTumbsListener();
