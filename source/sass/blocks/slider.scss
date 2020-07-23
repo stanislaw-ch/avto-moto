@@ -62,20 +62,24 @@
     display: block;
     margin-right: 20px;
 
+    opacity: 0.5;
+
     &:last-child {
       margin-right: 0;
     }
 
-    // &:hover {
-    //   border: 5px solid #d12136;
-    // }
+    &:hover {
+      // border: 5px solid #d12136;
+      opacity: 1;
+    }
 
-    // &:active {
-    //   opacity: 0.5;
-    // }
+    &:active {
+      opacity: 0.5;
+    }
 
     &--current {
-      border: 5px solid #d12136;
+      // border: 5px solid #d12136;
+      opacity: 1;
       pointer-events: none;
     }
   }
