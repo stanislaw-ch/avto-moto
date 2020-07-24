@@ -150,7 +150,7 @@
             </table>
           </div>
           <div class="tabs__element reviews tabs__element--hidden">
-            <a href="" class="reviews__button button">оставить отзыв</a>
+            <button class="reviews__button button" type="button">оставить отзыв</button>
             <ul class="reviews__list">
               <li class="reviews__item">
                 <h3 class="reviews__author">Борис Иванов</h3>
@@ -237,7 +237,8 @@
                 <a class="contacts__subtitle" href="mailto:info@avto-moto.ru">info@avto-moto.ru</a>
               </li>
             </ul>
-            <div class="contacts__map">
+            <div class="contacts__map" id="map">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4647.659677103179!2d30.316418610553544!3d59.967158711892154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696315bc4e8ce61%3A0xe703c377f3424272!2sStudio%20212!5e0!3m2!1sru!2sde!4v1595582063339!5m2!1sru!2sde" width="431" height="271" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
               <img src="img/map.jpg" alt="Геолокация интернет-магазина Avto-Moto" width="431" height="271">
             </div>
           </div>
@@ -301,6 +302,43 @@
       <span class="visually-hidden">Закрыть</span>
     </button>
   </section>
+
+  <template id="reviews">
+    <li class="reviews__item">
+      <h3 class="reviews__author">Марсель Исмагилов</h3>
+      <div class="reviews__opinion">
+        <p class="reviews__title reviews__title--advantages">Достоинства</p>
+        <p class="reviews__description">Cтиль, комфорт, управляемость</p>
+      </div>
+      <div class="reviews__opinion">
+        <p class="reviews__title reviews__title--disadvantages">Недостатки</p>
+        <p class="reviews__description">Дорогой ремонт и обслуживание</p>
+      </div>
+      <div class="reviews__opinion reviews__opinion--comment">
+        <p class="reviews__title">Комментарий</p>
+        <p class="reviews__description">
+          Дизайн отличный, управление просто шикарно, ощущения за рулём такой машины особые. Но ремонт очень дорогой. Пару месяцев назад пришлось менять двигатель. По стоимости вышло как новый автомобиль. Так что, если покупать эту машину, надо быть готовым к большим расходам на обслуживание.
+        </p>
+      </div>
+      <div class="reviews__rating rating">
+        <ul class="rating__list">
+          <li class="rating__item"></li>
+          <li class="rating__item"></li>
+          <li class="rating__item"></li>
+          <li class="rating__item"></li>
+          <li class="rating__item"></li>
+        </ul>
+        <a class="reviews__rating-link">Советует</a>
+      </div>
+      <div class="reviews__feedback">
+        <p class="reviews__activity">1 минуту назад</p>
+        <a class="reviews__activity-reply">Ответить</a>
+      </div>
+    </li>
+  </template>
+
   <script src="js/script.js"></script>
+  <!-- <script src="js/map.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCubo6pvzkH1-z6BaeX_Dwz8SFaJXid5uM&callback=initMap"></script> -->
 </body>
 </html>

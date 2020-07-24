@@ -27,6 +27,9 @@ var tabs = document.querySelector('.promo__tabs');
 var tabslink = tabs.querySelectorAll('.tabs__link');
 var tabsElement = tabs.querySelectorAll('.tabs__element');
 
+var reviewButton = document.querySelector('.reviews__button');
+var modal = document.querySelector('.modal');
+
 var position = {
   getMin: 0,
   getMax: sliderThumbs.length - 1
@@ -49,7 +52,7 @@ var sliderTransform = function (direction) {
       sliderThumbs[index].classList.add('slider__item--current');
       sliderPuctures[index].classList.remove('slider__slide--hidden');
 
-      sliderThumbs = slider.querySelectorAll('.slider__item');
+      // sliderThumbs = slider.querySelectorAll('.slider__item');
       sliderThumbsCurrent = sliderThumbsList.querySelector('.slider__item--current');
       index = Array.from(sliderThumbs).indexOf(sliderThumbsCurrent);
     }
@@ -71,7 +74,7 @@ var sliderTransform = function (direction) {
       sliderThumbs[index].classList.add('slider__item--current');
       sliderPuctures[index].classList.remove('slider__slide--hidden');
 
-      sliderThumbs = slider.querySelectorAll('.slider__item');
+      // sliderThumbs = slider.querySelectorAll('.slider__item');
       sliderThumbsCurrent = sliderThumbsList.querySelector('.slider__item--current');
       index = Array.from(sliderThumbs).indexOf(sliderThumbsCurrent);
     }
@@ -125,7 +128,7 @@ var onTumbsClickChange = function (link, element) {
     element.classList.remove('slider__slide--hidden');
     link.classList.add('slider__item--current');
 
-    sliderThumbs = slider.querySelectorAll('.slider__item');
+    // sliderThumbs = slider.querySelectorAll('.slider__item');
     sliderThumbsCurrent = sliderThumbsList.querySelector('.slider__item--current');
     index = Array.from(sliderThumbs).indexOf(sliderThumbsCurrent);
 
@@ -146,3 +149,7 @@ var onTumbsClickChange = function (link, element) {
 for (var j = 0; j < sliderThumbs.length; j++) {
   onTumbsClickChange(sliderThumbs[j], sliderPuctures[j]);
 }
+
+reviewButton.addEventListener('click', function () {
+  modal.classList.remove('modal--hidden');
+});
