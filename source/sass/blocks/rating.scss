@@ -25,15 +25,26 @@
 
     margin-right: 3px;
 
-    background-image: url("../img/icon_rating-star.svg");
+    fill: #bdbec2;
+    fill-opacity: 0.7;
 
-    cursor: pointer;
+    // background-image: url("../img/icon_rating-star.svg");
+
 
     &--modal {
       width: 27px;
       height: 27px;
       margin-left: 4px;
+
+      fill: #bdbec2;
+      fill-opacity: 0.7;
       background-size: 27px 27px;
+      cursor: pointer;
+    }
+
+    &--selected {
+      fill: #d12136;
+      fill-opacity: 1;
     }
   }
 }

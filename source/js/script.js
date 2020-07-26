@@ -167,9 +167,6 @@ for (var j = 0; j < sliderThumbs.length; j++) {
 
 reviewButton.addEventListener('click', function () {
   modal.classList.remove('modal--hidden');
-  // for (var g = 0; g < modalItem.length; g++) {
-  //   modalItem[g].classList.remove('modal__item--error');
-  // }
 });
 
 
@@ -185,23 +182,6 @@ window.addEventListener('keydown', function (evt) {
     }
   }
 });
-
-var renderReview = function () {
-  var reviewItem = similarReviewTemplate.cloneNode(true);
-
-  reviewItem.querySelector('.reviews__author')
-      .textContent = modalName.value;
-  reviewItem.querySelector('.reviews__description--advantages')
-      .textContent = modalAdvantages.value;
-  reviewItem.querySelector('.reviews__description--disadvantages')
-      .textContent = modalDisadvantages.value;
-  reviewItem.querySelector('.reviews__description--comment')
-      .textContent = modalComment.value;
-
-  reviewList.appendChild(reviewItem);
-
-  return reviewItem;
-};
 
 var highlightInvalidElement = function (item) {
   item.parentElement.classList.add('modal__item--error');
@@ -231,3 +211,58 @@ modalform.addEventListener('submit', function (evt) {
   renderReview();
   modal.classList.add('modal--hidden');
 });
+
+// var ratingList = modal.querySelectorAll('.rating__list');
+var ratingItem = modal.querySelectorAll('.rating__item');
+
+var onRatingClickChange = function (target) {
+  target.addEventListener('click', function () {
+    var indexRating = Array.from(ratingItem).indexOf(target);
+
+    for (var b = ratingItem.length - 1; b > indexRating; b--) {
+      if (ratingItem[b].classList.contains('rating__item--selected')) {
+        ratingItem[b].classList.remove('rating__item--selected');
+      }
+    }
+
+    for (var k = 0; k <= indexRating; k++) {
+      ratingItem[k].classList.add('rating__item--selected');
+    }
+  });
+};
+
+for (var g = 0; g < ratingItem.length; g++) {
+  onRatingClickChange(ratingItem[g]);
+}
+
+var createRatingFragment = function () {
+  var RatingFragment = document.createDocumentFragment();
+  for (var x = 0; x < ratingItem.length; x++) {
+    var featureItem = document.createElement('li');
+    featureItem.className = ratingItem[x].className;
+    featureItem.classList.remove('rating__item--modal');
+    featureItem.insertAdjacentHTML('afterbegin', '<svg width="17" height="16" viewBox="0 0 17 16" xmlns="http://www.w3.org/2000/svg"><path d="M8.63145 0L10.5103 5.87336L16.5906 5.87336L11.6716 9.50329L13.5505 15.3766L8.63145 11.7467L3.71242 15.3766L5.59132 9.50329L0.672291 5.87336L6.75254 5.87336L8.63145 0Z"/></svg>');
+    // featureItem.insertAdjacentHTML('afterbegin', '<svg width="17" height="16"><use link:href="img/sprite_auto.svg#icon-rating-star"></use></svg>');
+    RatingFragment.appendChild(featureItem);
+  }
+  return RatingFragment;
+};
+
+var renderReview = function () {
+  var reviewItem = similarReviewTemplate.cloneNode(true);
+
+  reviewItem.querySelector('.reviews__author')
+      .textContent = modalName.value;
+  reviewItem.querySelector('.reviews__description--advantages')
+      .textContent = modalAdvantages.value;
+  reviewItem.querySelector('.reviews__description--disadvantages')
+      .textContent = modalDisadvantages.value;
+  reviewItem.querySelector('.reviews__description--comment')
+      .textContent = modalComment.value;
+  reviewItem.querySelector('.rating__list').innerHTML = '';
+  reviewItem.querySelector('.rating__list').appendChild(createRatingFragment());
+
+  reviewList.appendChild(reviewItem);
+
+  return reviewItem;
+};
