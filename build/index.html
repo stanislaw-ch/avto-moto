@@ -156,15 +156,15 @@
                 <h3 class="reviews__author">Борис Иванов</h3>
                 <div class="reviews__opinion">
                   <p class="reviews__title reviews__title--advantages">Достоинства</p>
-                  <p class="reviews__description">мощность, внешний вид</p>
+                  <p class="reviews__description reviews__description--advantages">мощность, внешний вид</p>
                 </div>
                 <div class="reviews__opinion">
                   <p class="reviews__title reviews__title--disadvantages">Недостатки</p>
-                  <p class="reviews__description">Слабые тормозные колодки (пришлось заменить)</p>
+                  <p class="reviews__description reviews__description--disadvantages">Слабые тормозные колодки (пришлось заменить)</p>
                 </div>
                 <div class="reviews__opinion reviews__opinion--comment">
                   <p class="reviews__title">Комментарий</p>
-                  <p class="reviews__description">
+                  <p class="reviews__description reviews__description--comment">
                     Взяли по трейд-ин, на выгодных условиях у дилера.
                     Стильная внешка и крут по базовым характеристикам.
                     Не думал, что пересяду на китайский автопром, но сейчас гоняю и понимаю, что полностью доволен.
@@ -261,46 +261,48 @@
     </div>
   </footer>
 
-  <section class="modal modal--hidden">
-    <h2 class="modal__title">Оставить отзыв</h2>
-    <form class="modal__form" action="https://echo.htmlacademy.ru" method="post">
-      <div class="modal__wrapper">
-        <div class="modal__item modal__item--required modal__item--error">
-          <label class="visually-hidden" for="user-name">Имя</label>
-          <input class="modal__input modal__input--error" id="user-name" type="text" name="user-name" placeholder="Имя" required="">
-        </div>
-        <div class="modal__item">
-          <label class="visually-hidden" for="advantages">Достоинства</label>
-          <input class="modal__input" id="advantages" type="text" name="advantages" placeholder="Достоинства">
-        </div>
-        <div class="modal__item">
-          <label class="visually-hidden" for="disadvantages">Недостатки</label>
-          <input class="modal__input" id="disadvantages" type="text" name="disadvantages" placeholder="Недостатки">
-        </div>
-      </div>
-      <div class="modal__wrapper">
-        <div class="modal__item rating">
-          <div class="rating__wrapper">
-            <p>Оцените товар:</p>
-            <ul class="rating__list">
-              <li class="rating__item rating__item--modal"></li>
-              <li class="rating__item rating__item--modal"></li>
-              <li class="rating__item rating__item--modal"></li>
-              <li class="rating__item rating__item--modal"></li>
-              <li class="rating__item rating__item--modal "></li>
-            </ul>
+  <section class="modal modal--hidden ">
+    <div class="modal__popup">
+      <h2 class="modal__title">Оставить отзыв</h2>
+      <form class="modal__form" action="https://echo.htmlacademy.ru" method="post" autocomplete="off">
+        <div class="modal__wrapper">
+          <div class="modal__item modal__item--required">
+            <label class="visually-hidden" for="user-name">Имя</label>
+            <input class="modal__input" id="user-name" type="text" name="user-name" placeholder="Имя" required="">
+          </div>
+          <div class="modal__item">
+            <label class="visually-hidden" for="advantages">Достоинства</label>
+            <input class="modal__input" id="advantages" type="text" name="advantages" placeholder="Достоинства">
+          </div>
+          <div class="modal__item">
+            <label class="visually-hidden" for="disadvantages">Недостатки</label>
+            <input class="modal__input" id="disadvantages" type="text" name="disadvantages" placeholder="Недостатки">
           </div>
         </div>
-        <div class="modal__item modal__item--required">
-          <label class="visually-hidden" for="comment">Комментарий</label>
-          <textarea class="modal__textarea modal__textarea--error" name="comment" id="comment" placeholder="Комментарий" required=""></textarea>
+        <div class="modal__wrapper">
+          <div class="modal__item rating">
+            <div class="rating__wrapper">
+              <p>Оцените товар:</p>
+              <ul class="rating__list">
+                <li class="rating__item rating__item--modal"></li>
+                <li class="rating__item rating__item--modal"></li>
+                <li class="rating__item rating__item--modal"></li>
+                <li class="rating__item rating__item--modal"></li>
+                <li class="rating__item rating__item--modal "></li>
+              </ul>
+            </div>
+          </div>
+          <div class="modal__item modal__item--required">
+            <label class="visually-hidden" for="comment">Комментарий</label>
+            <textarea class="modal__input modal__input--textarea" name="comment" id="comment" placeholder="Комментарий" required=""></textarea>
+          </div>
         </div>
-      </div>
-      <button class="button modal__button" type="submit">оставить отзыв</button>
-    </form>
-    <button class="modal__close" type="button">
-      <span class="visually-hidden">Закрыть</span>
-    </button>
+        <button class="button modal__button">оставить отзыв</button>
+      </form>
+      <button class="modal__close" type="button">
+        <span class="visually-hidden">Закрыть</span>
+      </button>
+    </div>
   </section>
 
   <template id="reviews">
@@ -308,15 +310,15 @@
       <h3 class="reviews__author">Марсель Исмагилов</h3>
       <div class="reviews__opinion">
         <p class="reviews__title reviews__title--advantages">Достоинства</p>
-        <p class="reviews__description">Cтиль, комфорт, управляемость</p>
+        <p class="reviews__description reviews__description--advantages">Cтиль, комфорт, управляемость</p>
       </div>
       <div class="reviews__opinion">
         <p class="reviews__title reviews__title--disadvantages">Недостатки</p>
-        <p class="reviews__description">Дорогой ремонт и обслуживание</p>
+        <p class="reviews__description reviews__description--disadvantages">Дорогой ремонт и обслуживание</p>
       </div>
       <div class="reviews__opinion reviews__opinion--comment">
         <p class="reviews__title">Комментарий</p>
-        <p class="reviews__description">
+        <p class="reviews__description reviews__description--comment">
           Дизайн отличный, управление просто шикарно, ощущения за рулём такой машины особые. Но ремонт очень дорогой. Пару месяцев назад пришлось менять двигатель. По стоимости вышло как новый автомобиль. Так что, если покупать эту машину, надо быть готовым к большим расходам на обслуживание.
         </p>
       </div>

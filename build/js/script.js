@@ -1,4 +1,5 @@
 'use strict';
+
 // var pageHeader = document.querySelector('.page-header');
 // var headerToggle = document.querySelector('.page-header__toggle');
 
@@ -27,8 +28,22 @@ var tabs = document.querySelector('.promo__tabs');
 var tabslink = tabs.querySelectorAll('.tabs__link');
 var tabsElement = tabs.querySelectorAll('.tabs__element');
 
+var similarReviewTemplate = document.querySelector('#reviews')
+    .content.querySelector('.reviews__item');
 var reviewButton = document.querySelector('.reviews__button');
+var reviewList = document.querySelector('.reviews__list');
+
 var modal = document.querySelector('.modal');
+var modalform = modal.querySelector('.modal__form');
+var modalItem = modal.querySelectorAll('.modal__item');
+var modalItemRequired = modal.querySelectorAll('[required]');
+var modalInput = modal.querySelectorAll('.modal__input');
+var modalClose = modal.querySelector('.modal__close');
+var submitButton = modal.querySelector('.modal__button');
+var modalName = modal.querySelector('#user-name');
+var modalAdvantages = modal.querySelector('#advantages');
+var modalDisadvantages = modal.querySelector('#disadvantages');
+var modalComment = modal.querySelector('#comment');
 
 var position = {
   getMin: 0,
@@ -152,4 +167,67 @@ for (var j = 0; j < sliderThumbs.length; j++) {
 
 reviewButton.addEventListener('click', function () {
   modal.classList.remove('modal--hidden');
+  // for (var g = 0; g < modalItem.length; g++) {
+  //   modalItem[g].classList.remove('modal__item--error');
+  // }
+});
+
+
+modalClose.addEventListener('click', function (evt) {
+  evt.preventDefault();
+  modal.classList.add('modal--hidden');
+});
+
+window.addEventListener('keydown', function (evt) {
+  if (evt.keyCode === 27) {
+    if (!modal.classList.contains('modal--hidden')) {
+      modal.classList.add('modal--hidden');
+    }
+  }
+});
+
+var renderReview = function () {
+  var reviewItem = similarReviewTemplate.cloneNode(true);
+
+  reviewItem.querySelector('.reviews__author')
+      .textContent = modalName.value;
+  reviewItem.querySelector('.reviews__description--advantages')
+      .textContent = modalAdvantages.value;
+  reviewItem.querySelector('.reviews__description--disadvantages')
+      .textContent = modalDisadvantages.value;
+  reviewItem.querySelector('.reviews__description--comment')
+      .textContent = modalComment.value;
+
+  reviewList.appendChild(reviewItem);
+
+  return reviewItem;
+};
+
+var highlightInvalidElement = function (item) {
+  item.parentElement.classList.add('modal__item--error');
+};
+
+var unhighlightInvalidElement = function (item) {
+  item.parentElement.classList.remove('modal__item--error');
+};
+
+var onFormInvalid = function (evt) {
+  highlightInvalidElement(evt.target);
+};
+
+var onElementCheckValidity = function (evt) {
+  if (!evt.target.checkValidity()) {
+    highlightInvalidElement(evt.target);
+  } else {
+    unhighlightInvalidElement(evt.target);
+  }
+};
+
+modalform.addEventListener('invalid', onFormInvalid, true);
+modalform.addEventListener('change', onElementCheckValidity);
+
+modalform.addEventListener('submit', function (evt) {
+  evt.preventDefault();
+  renderReview();
+  modal.classList.add('modal--hidden');
 });
