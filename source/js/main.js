@@ -41,6 +41,7 @@
   var modalAdvantages = modal.querySelector('#advantages');
   var modalDisadvantages = modal.querySelector('#disadvantages');
   var modalComment = modal.querySelector('#comment');
+  // var overlayClick =
 
   var index = Array.from(sliderThumbs).indexOf(sliderThumbsCurrent);
 
@@ -296,9 +297,14 @@
     modal.classList.remove('modal--hidden');
   });
 
-  modalClose.addEventListener('click', function (evt) {
-    evt.preventDefault();
+  modalClose.addEventListener('click', function () {
     modal.classList.add('modal--hidden');
+  });
+
+  modal.addEventListener('click', function (evt) {
+    if (evt.target.classList.contains('modal')) {
+      modal.classList.add('modal--hidden');
+    }
   });
 
   window.addEventListener('keydown', function (evt) {
