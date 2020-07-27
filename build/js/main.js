@@ -41,7 +41,6 @@
   var modalAdvantages = modal.querySelector('#advantages');
   var modalDisadvantages = modal.querySelector('#disadvantages');
   var modalComment = modal.querySelector('#comment');
-  // var overlayClick =
 
   var index = Array.from(sliderThumbs).indexOf(sliderThumbsCurrent);
 
@@ -295,6 +294,7 @@
     //   window.scrollTo(0, 0);
     // });
     modal.classList.remove('modal--hidden');
+    modalName.focus();
   });
 
   modalClose.addEventListener('click', function () {
@@ -320,4 +320,17 @@
     renderReview();
     modal.classList.add('modal--hidden');
   });
+
+
+  function storageAvailable(type) {
+    try {
+      var storage = window[type];
+      var x = '__storage_test__';
+      storage.setItem(x, x);
+      storage.removeItem(x);
+      return true;
+    } catch (e) {
+      return false;
+    }
+  }
 })();
