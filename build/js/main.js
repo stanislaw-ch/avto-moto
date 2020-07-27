@@ -29,8 +29,7 @@
   var tabslink = tabs.querySelectorAll('.tabs__link');
   var tabsElement = tabs.querySelectorAll('.tabs__element');
 
-  var similarReviewTemplate = document.querySelector('#reviews')
-      .content.querySelector('.reviews__item');
+  var similarReviewTemplate = document.querySelector('#reviews').content.querySelector('.reviews__item');
   var reviewButton = document.querySelector('.reviews__button');
   var reviewList = document.querySelector('.reviews__list');
 
@@ -50,6 +49,18 @@
     GET_MIN: 0,
     GET_MAX: sliderThumbs.length - 1
   };
+
+  function storageAvailable(type) {
+    try {
+      var storage = window[type];
+      var x = '__storage_test__';
+      storage.setItem(x, x);
+      storage.removeItem(x);
+      return true;
+    } catch (e) {
+      return false;
+    }
+  }
 
   /**
    * Отслеживает клики на кнопки слайдера
@@ -294,6 +305,14 @@
     //   window.scrollTo(0, 0);
     // });
     modal.classList.remove('modal--hidden');
+
+    if (storageAvailable('localStorage')) {
+      localStorage.getItem('name');
+      localStorage.getItem('advantages');
+      localStorage.getItem('disadvantages');
+      localStorage.getItem('comment');
+    }
+
     modalName.focus();
   });
 
@@ -318,19 +337,15 @@
   modalform.addEventListener('submit', function (evt) {
     evt.preventDefault();
     renderReview();
+    if (storageAvailable('localStorage')) {
+      localStorage.setItem('name', modalName.value);
+      localStorage.setItem('advantages', modalAdvantages.value);
+      localStorage.setItem('disadvantages', modalDisadvantages.value);
+      localStorage.setItem('comment', modalComment.value);
+    }
+    for (var g = 0; g < ratingItem.length; g++) {
+      ratingItem[g].classList.remove('rating__item--selected');
+    }
     modal.classList.add('modal--hidden');
   });
-
-
-  function storageAvailable(type) {
-    try {
-      var storage = window[type];
-      var x = '__storage_test__';
-      storage.setItem(x, x);
-      storage.removeItem(x);
-      return true;
-    } catch (e) {
-      return false;
-    }
-  }
 })();
