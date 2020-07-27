@@ -301,9 +301,7 @@
   modalform.addEventListener('change', onElementCheckValidity);
 
   reviewButton.addEventListener('click', function () {
-    // window.addEventListener('scroll', function () {
-    //   window.scrollTo(0, 0);
-    // });
+    document.querySelector('body').style.overflow = 'hidden';
     modal.classList.remove('modal--hidden');
 
     if (storageAvailable('localStorage')) {
@@ -318,11 +316,13 @@
 
   modalClose.addEventListener('click', function () {
     modal.classList.add('modal--hidden');
+    document.querySelector('body').style.overflow = 'visible';
   });
 
   modal.addEventListener('click', function (evt) {
     if (evt.target.classList.contains('modal')) {
       modal.classList.add('modal--hidden');
+      document.querySelector('body').style.overflow = 'visible';
     }
   });
 
@@ -330,6 +330,7 @@
     if (evt.keyCode === 27) {
       if (!modal.classList.contains('modal--hidden')) {
         modal.classList.add('modal--hidden');
+        document.querySelector('body').style.overflow = 'visible';
       }
     }
   });
