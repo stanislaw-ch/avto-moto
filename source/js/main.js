@@ -128,11 +128,11 @@
    */
   var onTumbsClickChange = function (onClickTumb, hideSlide) {
     onClickTumb.addEventListener('click', function () {
-      for (var k = 0; k < sliderPuctures.length; k++) {
-        sliderPuctures[k].classList.add('slider__slide--hidden');
+      for (var i = 0; i < sliderPuctures.length; i++) {
+        sliderPuctures[i].classList.add('slider__slide--hidden');
       }
-      for (var g = 0; g < sliderThumbs.length; g++) {
-        sliderThumbs[g].classList.remove('slider__item--current');
+      for (var j = 0; j < sliderThumbs.length; j++) {
+        sliderThumbs[j].classList.remove('slider__item--current');
       }
       hideSlide.classList.remove('slider__slide--hidden');
       onClickTumb.classList.add('slider__item--current');
@@ -233,7 +233,7 @@
   var renderReview = function () {
     var reviewItem = similarReviewTemplate.cloneNode(true);
 
-    reviewItem.querySelector('.reviews__author')
+    reviewItem.querySelector('.reviews__item h3')
         .textContent = modalName.value;
     reviewItem.querySelector('.reviews__description--advantages')
         .textContent = modalAdvantages.value;
@@ -257,31 +257,31 @@
     target.addEventListener('click', function () {
       var indexRating = Array.from(ratingItem).indexOf(target);
 
-      for (var b = ratingItem.length - 1; b > indexRating; b--) {
-        if (ratingItem[b].classList.contains('rating__item--selected')) {
-          ratingItem[b].classList.remove('rating__item--selected');
+      for (var i = ratingItem.length - 1; i > indexRating; i--) {
+        if (ratingItem[i].classList.contains('rating__item--selected')) {
+          ratingItem[i].classList.remove('rating__item--selected');
         }
       }
 
-      for (var k = 0; k <= indexRating; k++) {
-        ratingItem[k].classList.add('rating__item--selected');
+      for (var j = 0; j <= indexRating; j++) {
+        ratingItem[j].classList.add('rating__item--selected');
       }
     });
   };
 
   // Передает элемет миниатюр слайдера по клику
-  for (var j = 0; j < sliderThumbs.length; j++) {
-    onTumbsClickChange(sliderThumbs[j], sliderPuctures[j]);
+  for (var i = 0; i < sliderThumbs.length; i++) {
+    onTumbsClickChange(sliderThumbs[i], sliderPuctures[i]);
   }
 
   // Передает элемет таба по клику
-  for (var i = 0; i < tabslink.length; i++) {
-    onTabClickChange(tabslink[i], tabsElement[i]);
+  for (var j = 0; j < tabslink.length; j++) {
+    onTabClickChange(tabslink[j], tabsElement[j]);
   }
 
   // Передает элемет рейтинга по клику
-  for (var g = 0; g < ratingItem.length; g++) {
-    onRatingClickChange(ratingItem[g]);
+  for (var k = 0; k < ratingItem.length; k++) {
+    onRatingClickChange(ratingItem[k]);
   }
 
   sliderButtonListener();
@@ -290,6 +290,9 @@
   modalform.addEventListener('change', onElementCheckValidity);
 
   reviewButton.addEventListener('click', function () {
+    // window.addEventListener('scroll', function () {
+    //   window.scrollTo(0, 0);
+    // });
     modal.classList.remove('modal--hidden');
   });
 

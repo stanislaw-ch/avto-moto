@@ -18,12 +18,13 @@
   // &__item {
   // }
 
-  &__title {
+  & h3 {
     margin: 0 0 5px 0;
     color: #1a212f;
   }
 
-  &__subtitle {
+  & p,
+  & a {
     margin: 0;
     font-weight: 600;
     font-size: 14px;

@@ -1,4 +1,31 @@
 .promo {
+  position: relative;
+
+  &__new {
+    position: absolute;
+    box-sizing: border-box;
+    top: 0;
+    left: 0;
+
+    width: 122px;
+    height: 30px;
+
+    background-color: #d12136;
+  }
+
+  &__new p {
+    margin: 0;
+    padding: 8px 0;
+
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 14px;
+    text-align: center;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: #ffffff;
+  }
+
   &__wrapper {
     display: flex;
     margin-bottom: 85px;
