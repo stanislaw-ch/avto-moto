@@ -343,10 +343,16 @@
       localStorage.setItem('advantages', modalAdvantages.value);
       localStorage.setItem('disadvantages', modalDisadvantages.value);
       localStorage.setItem('comment', modalComment.value);
+
+      for(var i=0; i<localStorage.length; i++) {
+        var key = localStorage.key(i);
+        console.log(`${key}: ${localStorage.getItem(key)}`);
+      }
     }
     for (var g = 0; g < ratingItem.length; g++) {
       ratingItem[g].classList.remove('rating__item--selected');
     }
     modal.classList.add('modal--hidden');
+    document.querySelector('body').style.overflow = 'visible';
   });
 })();

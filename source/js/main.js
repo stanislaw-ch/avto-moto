@@ -348,5 +348,6 @@
       ratingItem[g].classList.remove('rating__item--selected');
     }
     modal.classList.add('modal--hidden');
+    document.querySelector('body').style.overflow = 'visible';
   });
 })();
