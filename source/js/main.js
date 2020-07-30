@@ -224,48 +224,6 @@
   };
 
   /**
-   * Возвращает список с рейтингом отзыва, переданного пользователем
-   * @return {object} RatingFragment
-   */
-  var createRatingFragment = function () {
-    var RatingFragment = document.createDocumentFragment();
-    for (var x = 0; x < ratingItem.length; x++) {
-      var featureItem = document.createElement('li');
-      featureItem.className = ratingItem[x].className;
-      featureItem.classList.remove('rating__item--modal');
-      featureItem.insertAdjacentHTML('afterbegin', '<svg width="17" height="16" viewBox="0 0 17 16" xmlns="http://www.w3.org/2000/svg"><path d="M8.63145 0L10.5103 5.87336L16.5906 5.87336L11.6716 9.50329L13.5505 15.3766L8.63145 11.7467L3.71242 15.3766L5.59132 9.50329L0.672291 5.87336L6.75254 5.87336L8.63145 0Z"/></svg>');
-      // featureItem.insertAdjacentHTML('afterbegin', '<svg width="17" height="16"><use link:href="img/sprite_auto.svg#icon-rating-star"></use></svg>');
-      RatingFragment.appendChild(featureItem);
-    }
-    return RatingFragment;
-  };
-
-  /**
-   * Добавляет новый отзыв,
-   * @return {object} RatingFragment
-   */
-  var renderReview = function () {
-    var reviewItem = similarReviewTemplate.cloneNode(true);
-
-    reviewItem.querySelector('.reviews__item h3')
-        .textContent = modalName.value;
-    reviewItem.querySelector('.reviews__description--advantages')
-        .textContent = modalAdvantages.value;
-    reviewItem.querySelector('.reviews__description--disadvantages')
-        .textContent = modalDisadvantages.value;
-    reviewItem.querySelector('.reviews__description--comment')
-        .textContent = modalComment.value;
-    reviewItem.querySelector('.rating__list').innerHTML = '';
-    reviewItem.querySelector('.rating__list').appendChild(createRatingFragment());
-
-    reviewList.appendChild(reviewItem);
-
-    console.log(reviewObjectList[0].name);
-
-    return reviewItem;
-  };
-
-  /**
    * Обрабатывает клики по рейтингу отзыва
    * @param {object} target
    */
@@ -310,11 +268,11 @@
     modal.classList.remove('modal--hidden');
 
     if (storageAvailable('localStorage')) {
-      localStorage.getItem('name');
-      localStorage.getItem('advantages');
-      localStorage.getItem('disadvantages');
-      localStorage.getItem('comment');
-      localStorage.getItem('rating');
+      myStorage.getItem('name');
+      myStorage.getItem('advantages');
+      myStorage.getItem('disadvantages');
+      myStorage.getItem('comment');
+      myStorage.getItem('rating');
     }
 
     modalName.focus();
@@ -341,43 +299,120 @@
     }
   });
 
+  /**
+   * Возвращает список с рейтингом отзыва, переданного пользователем
+   * @return {object} RatingFragment
+   */
+  var createRatingFragment = function () {
+    var RatingFragment = document.createDocumentFragment();
+    for (var x = 0; x < ratingItem.length; x++) {
+      var rating = document.createElement('li');
+      rating.className = rating[x].className;
+      rating.classList.remove('rating__item--modal');
+      rating.insertAdjacentHTML('afterbegin', '<svg width="17" height="16" viewBox="0 0 17 16" xmlns="http://www.w3.org/2000/svg"><path d="M8.63145 0L10.5103 5.87336L16.5906 5.87336L11.6716 9.50329L13.5505 15.3766L8.63145 11.7467L3.71242 15.3766L5.59132 9.50329L0.672291 5.87336L6.75254 5.87336L8.63145 0Z"/></svg>');
+      // rating.insertAdjacentHTML('afterbegin', '<svg width="17" height="16"><use link:href="img/sprite_auto.svg#icon-rating-star"></use></svg>');
+      RatingFragment.appendChild(rating);
+    }
+    return RatingFragment;
+  };
+
+  /**
+   * Добавляет новый отзыв,
+   * @param {object} data
+   * @return {object} RatingFragment
+   */
+  var renderReview = function (data) {
+    var reviewItem = similarReviewTemplate.cloneNode(true);
+
+    // console.log(data.length);
+
+    reviewItem.querySelector('.reviews__item h3')
+        .textContent = data[0].name;
+    // reviewItem.querySelector('.reviews__description--advantages')
+    //     .textContent = modalAdvantages.value;
+    // reviewItem.querySelector('.reviews__description--disadvantages')
+    //     .textContent = modalDisadvantages.value;
+    // reviewItem.querySelector('.reviews__description--comment')
+    //     .textContent = modalComment.value;
+    // reviewItem.querySelector('.rating__list').innerHTML = '';
+    // reviewItem.querySelector('.rating__list').appendChild(createRatingFragment());
+
+    reviewList.appendChild(reviewItem);
+
+    console.log(reviewList);
+
+    return reviewItem;
+  };
+
+  // var renderReviewList = function (data) {
+  //   var Fragment = document.createDocumentFragment();
+  //   for (var j = 0; j < data.length; j++) {
+  //     Fragment.appendChild(renderReview(data[j]));
+  //   }
+  //   reviewList.appendChild(Fragment);
+  // };
+
+  // Массив с отзывами
   var reviewArr = [];
+
+  // Объект из оставленных отзывов
   var reviewObjectList = {};
 
+  // Объект полученный из localStorage
+  var returnObj = {};
+  var myStorage = window.localStorage;
+
+  /**
+   * Создает объетк, содержащий в себе все оставленные отзывы
+   * @param {object} localData
+   * @return {object} returnObj
+   */
   var getReviewObject = function (localData) {
     var reviewObject = {};
+
     for (var q = 1; q < localData.length - 1; q++) {
       var key = localData.key(q);
       reviewObject[key] = localData.getItem(key);
     }
+
     reviewArr.push(reviewObject);
     reviewObjectList = Object.assign({}, reviewArr);
 
-    console.log(reviewObjectList);
-    return reviewObjectList;
+    var serialObj = JSON.stringify(reviewObjectList);
+    localStorage.setItem(localData.key, serialObj);
+    returnObj = JSON.parse(localData.getItem(localData.key));
+
+    console.log(returnObj);
+
+    return returnObj;
   };
 
-  // renderReview(localStorage);
+  if (storageAvailable('localStorage')) {
+    // Получает данные из предедущей сессии
+    returnObj = JSON.parse(localStorage.getItem(localStorage.key));
+
+    // Отрисовка отзыва
+    renderReview(returnObj);
+  }
 
   modalform.addEventListener('submit', function (evt) {
     evt.preventDefault();
     if (storageAvailable('localStorage')) {
-      localStorage.setItem('name', modalName.value);
-      localStorage.setItem('advantages', modalAdvantages.value);
-      localStorage.setItem('disadvantages', modalDisadvantages.value);
-      localStorage.setItem('comment', modalComment.value);
-      localStorage.setItem('rating', modalRating);
+      myStorage.setItem('name', modalName.value);
+      myStorage.setItem('advantages', modalAdvantages.value);
+      myStorage.setItem('disadvantages', modalDisadvantages.value);
+      myStorage.setItem('comment', modalComment.value);
+      myStorage.setItem('rating', modalRating);
 
-      getReviewObject(localStorage);
+      getReviewObject(myStorage);
     }
+
+    renderReview(returnObj);
+
     for (var g = 0; g < ratingItem.length; g++) {
       ratingItem[g].classList.remove('rating__item--selected');
     }
-    // console.log(localStorage);
-    renderReview();
     modal.classList.add('modal--hidden');
     document.querySelector('body').style.overflow = 'visible';
   });
-
-  // console.log(a);
 })();
