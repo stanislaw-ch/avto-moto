@@ -15,8 +15,16 @@
     list-style: none;
   }
 
-  // &__item {
-  // }
+  &__item a[href] {
+    &:hover {
+      color: #d12136;
+    }
+
+    &:active {
+      color: #48494d;
+      opacity: 0.3;
+    }
+  }
 
   & h3 {
     margin: 0 0 5px 0;

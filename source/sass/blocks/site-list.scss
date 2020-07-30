@@ -4,10 +4,15 @@
   list-style: none;
 
   &__item a {
-    margin-left: 70px;
+    margin-left: 69px;
+
     font-weight: 600;
     line-height: 22px;
     color: #48494d;
+  }
+
+  &__item a:first-child {
+    margin-left: 0;
   }
 
   &__item a[href] {

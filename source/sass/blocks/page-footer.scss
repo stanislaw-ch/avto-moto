@@ -9,10 +9,16 @@
 
   &__item {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
   }
 
   &__item a {
+    margin-right: 72px;
+    color: #48494d;
+  }
+
+  &__item a:nth-child(7n) {
+    margin-right: 0;
     color: #48494d;
   }
 
@@ -30,6 +36,9 @@
   &__wrapper {
     display: flex;
     align-items: center;
+    justify-content: start;
+    box-sizing: border-box;
     min-height: 82px;
+    padding: 0 0 0 8px;
   }
 }

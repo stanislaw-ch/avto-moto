@@ -40,6 +40,9 @@
   var modalAdvantages = modal.querySelector('#advantages');
   var modalDisadvantages = modal.querySelector('#disadvantages');
   var modalComment = modal.querySelector('#comment');
+  var modalRating = modal.querySelectorAll('.rating__item');
+
+  // console.log(modalRating);
 
   var index = Array.from(sliderThumbs).indexOf(sliderThumbsCurrent);
 
@@ -257,6 +260,8 @@
 
     reviewList.appendChild(reviewItem);
 
+    console.log(reviewObjectList[0].name);
+
     return reviewItem;
   };
 
@@ -309,6 +314,7 @@
       localStorage.getItem('advantages');
       localStorage.getItem('disadvantages');
       localStorage.getItem('comment');
+      localStorage.getItem('rating');
     }
 
     modalName.focus();
@@ -335,24 +341,43 @@
     }
   });
 
+  var reviewArr = [];
+  var reviewObjectList = {};
+
+  var getReviewObject = function (localData) {
+    var reviewObject = {};
+    for (var q = 1; q < localData.length - 1; q++) {
+      var key = localData.key(q);
+      reviewObject[key] = localData.getItem(key);
+    }
+    reviewArr.push(reviewObject);
+    reviewObjectList = Object.assign({}, reviewArr);
+
+    console.log(reviewObjectList);
+    return reviewObjectList;
+  };
+
+  // renderReview(localStorage);
+
   modalform.addEventListener('submit', function (evt) {
     evt.preventDefault();
-    renderReview();
     if (storageAvailable('localStorage')) {
       localStorage.setItem('name', modalName.value);
       localStorage.setItem('advantages', modalAdvantages.value);
       localStorage.setItem('disadvantages', modalDisadvantages.value);
       localStorage.setItem('comment', modalComment.value);
+      localStorage.setItem('rating', modalRating);
 
-      for(var i=0; i<localStorage.length; i++) {
-        var key = localStorage.key(i);
-        console.log(`${key}: ${localStorage.getItem(key)}`);
-      }
+      getReviewObject(localStorage);
     }
     for (var g = 0; g < ratingItem.length; g++) {
       ratingItem[g].classList.remove('rating__item--selected');
     }
+    // console.log(localStorage);
+    renderReview();
     modal.classList.add('modal--hidden');
     document.querySelector('body').style.overflow = 'visible';
   });
+
+  // console.log(a);
 })();
