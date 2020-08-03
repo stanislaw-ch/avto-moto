@@ -27,3 +27,15 @@
     border-bottom: 1px solid #d7d9df;
   }
 }
+
+@media (max-width: 1023px) {
+  .features {
+    &__list {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+
+}

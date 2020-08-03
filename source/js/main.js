@@ -37,7 +37,7 @@
 
   var reviewArr = [];
 
-  var Position = {
+  var SliderPosition = {
     GET_MIN: 0,
     GET_MAX: sliderThumbs.length - 1
   };
@@ -86,13 +86,13 @@
    */
   var sliderTransform = function (direction) {
     if (direction === 'right') {
-      if (index >= Position.GET_MAX) {
+      if (index >= SliderPosition.GET_MAX) {
         return;
       }
       if (sliderButtonLeft.classList.contains('slider__button--disabled')) {
         sliderButtonLeft.classList.remove('slider__button--disabled');
       }
-      if (index >= Position.GET_MIN) {
+      if (index >= SliderPosition.GET_MIN) {
         index++;
         sliderThumbs[index - 1].classList.remove('slider__item--current');
         sliderPuctures[index - 1].classList.add('slider__slide--hidden');
@@ -102,18 +102,18 @@
         sliderThumbsCurrent = sliderThumbsList.querySelector('.slider__item--current');
         index = Array.from(sliderThumbs).indexOf(sliderThumbsCurrent);
       }
-      if (Array.from(sliderThumbs).indexOf(sliderThumbsCurrent) === Position.GET_MAX) {
+      if (Array.from(sliderThumbs).indexOf(sliderThumbsCurrent) === SliderPosition.GET_MAX) {
         sliderButtonRight.classList.add('slider__button--disabled');
       }
     }
     if (direction === 'left') {
-      if (index === Position.GET_MIN) {
+      if (index === SliderPosition.GET_MIN) {
         return;
       }
       if (sliderButtonRight.classList.contains('slider__button--disabled')) {
         sliderButtonRight.classList.remove('slider__button--disabled');
       }
-      if (index <= Position.GET_MAX) {
+      if (index <= SliderPosition.GET_MAX) {
         index--;
         sliderThumbs[index + 1].classList.remove('slider__item--current');
         sliderPuctures[index + 1].classList.add('slider__slide--hidden');
@@ -123,7 +123,7 @@
         sliderThumbsCurrent = sliderThumbsList.querySelector('.slider__item--current');
         index = Array.from(sliderThumbs).indexOf(sliderThumbsCurrent);
       }
-      if (index === Position.GET_MIN) {
+      if (index === SliderPosition.GET_MIN) {
         sliderButtonLeft.classList.add('slider__button--disabled');
       }
     }

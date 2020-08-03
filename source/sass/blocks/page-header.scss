@@ -4,3 +4,12 @@
 
   background-color: #f5f5f9;
 }
+
+@media (max-width: 1023px) {
+  .page-header {
+    margin-bottom: 21px;
+  }
+}
+
+@media (max-width: 767px) {
+}

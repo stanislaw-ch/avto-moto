@@ -31,15 +31,38 @@
     margin-bottom: 89px;
   }
 
-  // &__slider {
-  // }
-
   &__card {
     margin-left: 54px;
   }
 
   &__tabs {
-    margin-bottom: 137px;
+    margin-bottom: 146px;
     padding-left: 5px;
   }
+}
+
+@media (max-width: 1023px) {
+  .promo {
+    &__wrapper {
+      flex-direction: column;
+      margin-bottom: 30px;
+    }
+
+    &__slider {
+      margin-bottom: 66px;
+    }
+
+    &__card {
+      margin-left: 0;
+    }
+
+    &__tabs {
+      margin-bottom: 80px;
+      padding-left: 0;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+
 }

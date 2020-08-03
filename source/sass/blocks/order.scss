@@ -37,5 +37,18 @@
       background-color: #bd0c21;
     }
   }
+}
 
+@media (max-width: 1023px) {
+  .order {
+    &__request {
+      margin-right: 30px;
+      margin-bottom: 0;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .order {
+  }
 }

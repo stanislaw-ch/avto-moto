@@ -42,3 +42,31 @@
     padding: 0 0 0 8px;
   }
 }
+
+@media (max-width: 1023px) {
+  .page-footer {
+    &__wrapper {
+      align-items: flex-start;
+      min-height: 166px;
+      padding: 30px 0;
+    }
+
+    &__item {
+      justify-content: space-between;
+    }
+
+    &__item a {
+      // width: 218px;
+    }
+
+    &__item a:nth-child(3n) {
+      margin-right: 0;
+      color: #48494d;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  // .main-nav {
+  // }
+}

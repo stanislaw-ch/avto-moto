@@ -2,3 +2,17 @@
   width: 1180px;
   margin: 0 auto;
 }
+
+@media (max-width: 1023px) {
+  .contanier {
+    width: 726px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .contanier {
+    width: 288px;
+    margin: 0 auto;
+  }
+}

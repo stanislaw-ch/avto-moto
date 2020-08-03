@@ -11,3 +11,15 @@
   // &__list {
   // }
 }
+
+@media (max-width: 1023px) {
+  .main-nav {
+    min-height: 75px;
+    padding: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  // .main-nav {
+  // }
+}

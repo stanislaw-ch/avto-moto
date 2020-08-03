@@ -99,3 +99,24 @@
     display: block;
   }
 }
+
+@media (max-width: 1023px) {
+  .slider {
+    &__slide {
+      display: block;
+      width: 726px;
+      height: 454px;
+
+      &--hidden {
+        display: none;
+      }
+    }
+
+    &__navigation {
+      padding: 0 63px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+}
