@@ -28,12 +28,12 @@
   var modalAdvantages = modal.querySelector('#advantages');
   var modalDisadvantages = modal.querySelector('#disadvantages');
   var modalComment = modal.querySelector('#comment');
-  var modalRating = modal.querySelectorAll('.rating__item');
-  var modalRatingList = modal.querySelectorAll('.rating__list');
 
   var index = Array.from(sliderThumbs).indexOf(sliderThumbsCurrent);
 
   var ratingItem = modal.querySelectorAll('.rating__item');
+
+  var ratingSelectCount = 0;
 
   var reviewArr = [];
 
@@ -41,10 +41,6 @@
     GET_MIN: 0,
     GET_MAX: sliderThumbs.length - 1
   };
-
-  console.log(modalRatingList.childNodes);
-  console.log(modalRating.childNodes);
-  console.log(Array.from(modalRating));
 
   /**
    * Проверяет на доступность localStorage
@@ -227,6 +223,7 @@
    */
   var onRatingClickChange = function (target) {
     target.addEventListener('click', function () {
+      ratingSelectCount = 0;
       var indexRating = Array.from(ratingItem).indexOf(target);
 
       for (var i = ratingItem.length - 1; i > indexRating; i--) {
@@ -237,6 +234,7 @@
 
       for (var j = 0; j <= indexRating; j++) {
         ratingItem[j].classList.add('rating__item--selected');
+        ratingSelectCount++;
       }
     });
   };
@@ -250,10 +248,11 @@
     var RatingFragment = document.createDocumentFragment();
     for (var x = 0; x < RATING_COUNT; x++) {
       var rating = document.createElement('li');
-      rating.className = obj.rating[x].className;
-      rating.classList.remove('rating__item--modal');
+      rating.classList.add('rating__item');
       rating.insertAdjacentHTML('afterbegin', '<svg width="17" height="16" viewBox="0 0 17 16" xmlns="http://www.w3.org/2000/svg"><path d="M8.63145 0L10.5103 5.87336L16.5906 5.87336L11.6716 9.50329L13.5505 15.3766L8.63145 11.7467L3.71242 15.3766L5.59132 9.50329L0.672291 5.87336L6.75254 5.87336L8.63145 0Z"/></svg>');
-      // rating.insertAdjacentHTML('afterbegin', '<svg width="17" height="16"><use link:href="img/sprite_auto.svg#icon-rating-star"></use></svg>');
+      if (x < obj.rating) {
+        rating.classList.add('rating__item--selected');
+      }
       RatingFragment.appendChild(rating);
     }
     return RatingFragment;
@@ -280,6 +279,9 @@
     }
   };
 
+  /**
+   * Загрузает отзывы из localStorage
+   */
   var loadReviews = function () {
     if (storageAvailable('localStorage')) {
       var data = localStorage.getItem('reviewArr');
@@ -293,11 +295,12 @@
     }
   };
 
+  /**
+   * Сохраняет отзывы в localStorage
+   */
   var saveReviwes = function () {
     if (storageAvailable('localStorage')) {
-      console.log(reviewArr);
       localStorage.setItem('reviewArr', JSON.stringify(reviewArr));
-      console.log(localStorage);
     }
   };
 
@@ -310,11 +313,6 @@
   for (var j = 0; j < tabslink.length; j++) {
     onTabClickChange(tabslink[j], tabsElement[j]);
   }
-
-
-  sliderButtonListener();
-  loadReviews();
-
 
   modalform.addEventListener('invalid', onFormInvalid, true);
   modalform.addEventListener('change', onElementCheckValidity);
@@ -373,29 +371,24 @@
       'advantages': '',
       'disadvantages': '',
       'comment': '',
-      'rating': []
+      'rating': ''
     };
 
     oneReview.name = modalName.value;
     oneReview.advantages = modalAdvantages.value;
     oneReview.disadvantages = modalDisadvantages.value;
     oneReview.comment = modalComment.value;
-    oneReview.rating = Array.from(modalRating);
-    // oneReview.rating = modalRating;
+    oneReview.rating = ratingSelectCount;
 
     renderReview(oneReview);
     reviewArr.push(oneReview);
-    console.log(oneReview);
-    console.log(reviewArr);
 
     saveReviwes();
-
-    // Удаляет класс ".rating__item--selected" со звезд рейтинга
-    // for (var g = 0; g < ratingItem.length; g++) {
-    //   ratingItem[g].classList.remove('rating__item--selected');
-    // }
 
     modal.classList.add('modal--hidden');
     document.querySelector('body').style.overflow = 'visible';
   });
+
+  sliderButtonListener();
+  loadReviews();
 })();
