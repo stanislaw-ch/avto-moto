@@ -58,3 +58,19 @@
     }
   }
 }
+
+@media (max-width: 1023px) {
+  .tabs {
+    &__list {
+      margin-bottom: 29px;
+    }
+
+    &__element {
+      // padding-top: 6px;
+    }
+  }
+}
+
+
+@media (max-width: 767px) {
+}

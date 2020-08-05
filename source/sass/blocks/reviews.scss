@@ -165,3 +165,53 @@
     }
   }
 }
+
+@media (max-width: 1023px) {
+  .reviews {
+    width: 100%;
+    padding-top: 83px;
+
+    &__button {
+      top: 0;
+      left: 0;
+    }
+
+    & h3 {
+      margin: 0 0 10px 0;
+
+      font-size: 15px;
+      line-height: 20px;
+    }
+
+    &__opinion {
+      & p:last-child {
+        margin: 0 0 4px 0;
+      }
+    }
+
+    &__title {
+      &--comment {
+        display: none;
+      }
+
+      &--advantages,
+      &--disadvantages {
+        display: none;
+      }
+    }
+
+    &__description {
+      &--advantages,
+      &--disadvantages {
+        display: none;
+      }
+    }
+
+    &__rating {
+      margin-bottom: 31px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+}

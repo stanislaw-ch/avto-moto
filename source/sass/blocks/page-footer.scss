@@ -52,16 +52,21 @@
     }
 
     &__item {
-      justify-content: space-between;
+      justify-content: flex-start;
     }
 
     &__item a {
-      // width: 218px;
+      width: 218px;
+      margin-right: 119px;
+    }
+
+    &__item a:nth-child(1n+1) {
+      width: 142px;
     }
 
     &__item a:nth-child(3n) {
       margin-right: 0;
-      color: #48494d;
+      width: 100px;
     }
   }
 }

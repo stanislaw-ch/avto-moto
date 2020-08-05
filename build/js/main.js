@@ -317,6 +317,7 @@
   modalform.addEventListener('invalid', onFormInvalid, true);
   modalform.addEventListener('change', onElementCheckValidity);
 
+
   reviewButton.addEventListener('click', function () {
     document.querySelector('body').style.overflow = 'hidden';
     modal.classList.remove('modal--hidden');
@@ -326,17 +327,18 @@
       onRatingClickChange(ratingItem[k]);
     }
 
-    if (localStorage.length > 0) {
-    // if (storageAvailable('localStorage')) {
-      var localStorageModal = localStorage.getItem('reviewArr');
-      var localStorageModalValue = JSON.parse(localStorageModal);
-      var localStorageModalArrLength = localStorageModalValue.length - 1;
+    // var storage = localStorage.getItem('reviewArr');
 
-      modalName.value = localStorageModalValue[localStorageModalArrLength]['name'];
-      modalAdvantages.value = localStorageModalValue[localStorageModalArrLength]['advantages'];
-      modalDisadvantages.value = localStorageModalValue[localStorageModalArrLength]['disadvantages'];
-      modalComment.value = localStorageModalValue[localStorageModalArrLength]['comment'];
-    }
+    // if (storage !== null) {
+    //   var localStorageModal = localStorage.getItem('reviewArr');
+    //   var localStorageModalValue = JSON.parse(localStorageModal);
+    //   var localStorageModalArrLength = localStorageModalValue.length - 1;
+
+    //   modalName.value = localStorageModalValue[localStorageModalArrLength]['name'];
+    //   modalAdvantages.value = localStorageModalValue[localStorageModalArrLength]['advantages'];
+    //   modalDisadvantages.value = localStorageModalValue[localStorageModalArrLength]['disadvantages'];
+    //   modalComment.value = localStorageModalValue[localStorageModalArrLength]['comment'];
+    // }
 
     modalName.focus();
   });
@@ -384,7 +386,7 @@
     reviewArr.push(oneReview);
 
     saveReviwes();
-
+    modalform.reset();
     modal.classList.add('modal--hidden');
     document.querySelector('body').style.overflow = 'visible';
   });
