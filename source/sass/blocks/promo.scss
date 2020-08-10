@@ -57,12 +57,31 @@
     }
 
     &__tabs {
-      margin-bottom: 80px;
+      margin-bottom: 78px;
       padding-left: 0;
     }
   }
 }
 
 @media (max-width: 767px) {
+  .promo {
+    // &__wrapper {
+    //   flex-direction: column;
+    //   margin-bottom: 29px;
+    // }
+
+    // &__slider {
+    //   margin-bottom: 66px;
+    // }
+
+    // &__card {
+    //   margin-left: 0;
+    // }
+
+    &__tabs {
+      margin-bottom: 40px;
+      // padding-left: 0;
+    }
+  }
 
 }

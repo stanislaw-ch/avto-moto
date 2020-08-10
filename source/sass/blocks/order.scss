@@ -50,5 +50,11 @@
 
 @media (max-width: 767px) {
   .order {
+    &__request {
+      box-sizing: border-box;
+      width: 200px;
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
   }
 }

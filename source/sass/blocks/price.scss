@@ -28,3 +28,17 @@
     }
   }
 }
+
+
+@media (max-width: 1023px) {
+  .price {
+  }
+}
+
+@media (max-width: 767px) {
+  .price {
+    &__previous {
+      margin-left: 0;
+    }
+  }
+}
