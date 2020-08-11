@@ -111,17 +111,51 @@
   .card {
     &__list {
       width: 100%;
+      max-width: 315px;
       padding: 0;
+    }
+
+    &__item {
+      padding: 40px 0 0 5px;
+    }
+
+    &__icon {
+      &--fuel {
+        left: 8px;
+      }
+
+      &--gear-box {
+        left: 21px;
+      }
+
+      // &--power-ps {
+      //   left: 9px;
+
+      //   width: 40px;
+      //   height: 40px;
+
+      //   background-image: url("../img/icon_power-ps.svg");
+      // }
+
+      // &--engine-disp {
+      //   left: 0;
+
+      //   width: 40px;
+      //   height: 40px;
+
+      //   background-image: url("../img/icon_engine-disp.svg");
+      // }
     }
 
     &__price {
       flex-direction: column;
       align-items: flex-start;
-      margin-bottom: 30px;
+      margin-bottom: 32px;
     }
 
     &__order {
-      flex-direction: column;
+      flex-wrap: wrap;
+      // flex-direction: column;
     }
   }
 }

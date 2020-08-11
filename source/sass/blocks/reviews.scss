@@ -1,7 +1,7 @@
 .reviews {
   position: relative;
 
-  width: 1170px;
+  width: 100%;
   padding-top: 20px;
 
   &__button {
@@ -214,4 +214,61 @@
 }
 
 @media (max-width: 767px) {
+  .reviews {
+    // width: 100%;
+    padding-top: 81px;
+
+    &__button {
+      top: 0;
+      left: 0;
+
+      margin-left: 0;
+    }
+
+    // & h3 {
+    //   margin: 0 0 10px 0;
+
+    //   font-size: 15px;
+    //   line-height: 20px;
+    // }
+
+    &__opinion {
+      & p:last-child {
+        margin: 0 0 13px 0;
+      }
+    }
+
+    // &__title {
+    //   &--comment {
+    //     display: none;
+    //   }
+
+    //   &--advantages,
+    //   &--disadvantages {
+    //     display: none;
+    //   }
+    // }
+
+    // &__description {
+    //   &--advantages,
+    //   &--disadvantages {
+    //     display: none;
+    //   }
+    // }
+
+    // &__rating {
+    //   margin-bottom: 31px;
+    // }
+  }
+}
+
+@media (max-width: 613px) {
+  .reviews {
+    &__button {
+      top: 0;
+      left: 50%;
+
+      margin-left: -95px;
+    }
+  }
 }

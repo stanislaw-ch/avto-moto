@@ -21,6 +21,7 @@
   &__credit {
     box-sizing: border-box;
     margin-right: auto;
+    max-height: 51px;
 
     color: #d12136;
 
@@ -53,8 +54,8 @@
     &__request {
       box-sizing: border-box;
       width: 200px;
-      margin-right: 0;
-      margin-bottom: 20px;
+      margin-right: 30px;
+      margin-bottom: 16px;
     }
   }
 }

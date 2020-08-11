@@ -21,6 +21,7 @@
 
 @media (max-width: 1023px) {
   .main-nav {
+    position: relative;
     min-height: 75px;
     padding: 0;
 
@@ -41,8 +42,8 @@
     &--opened .main-nav__toggle {
       width: 23px;
       height: 23px;
-      top: 18px;
-      right: 18px;
+      top: 24px;
+      right: 11px;
       left: auto;
 
       &::before,
@@ -70,14 +71,14 @@
 
       &:active::before,
       &:active::after {
-        background-color: rgba(255, 255, 255, 0.3);
+        background-color: #48494d;
       }
     }
 
     &__toggle {
       position: absolute;
       top: 28px;
-      right: 15px;
+      right: 7px;
 
       display: block;
       width: 29px;
@@ -89,6 +90,9 @@
 
       cursor: pointer;
     }
+    // &__list {
+    //   width: auto;
+    // }
   }
 }
 
@@ -96,9 +100,11 @@
   .main-nav {
     flex-direction: column;
     align-items: flex-start;
+    justify-content: center;
 
     &__logo {
-      padding: 10px 0;
+      margin-left: -6px;
+      padding: 7px 0;
     }
 
     &--closed .site-list__item {

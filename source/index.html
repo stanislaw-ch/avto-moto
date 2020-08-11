@@ -56,7 +56,6 @@
               <source type="image/webp" srcset="img/slide_desktop_2@1x.webp 1x, img/slide_desktop_2@2x.webp 2x">
               <!-- <source srcset="img/slide_mobile_2@1x.jpg 1x, img/slide_mobile_2@2x.jpg 2x" media="(max-width: 767px)"> -->
               <source srcset="img/slide_tablet_2@1x.jpg 1x, img/slide_tablet_2@2x.jpg 2x" media="(max-width: 1023px)">
-              <source type="image/webp" srcset="img/slide_desktop_2@1x.webp 1x, img/slide_desktop_2@2x.webp 2x">
               <img class="slider__slide slider__slide--hidden" src="img/slide_desktop_2@1x.jpg" srcset="img/slide_desktop_2@2x.jpg 2x" width="600" height="375" alt="Изображение автомобиля">
             </picture >
             <picture>
@@ -66,7 +65,6 @@
               <source type="image/webp" srcset="img/slide_desktop_3@1x.webp 1x, img/slide_desktop_3@2x.webp 2x">
               <!-- <source srcset="img/slide_mobile_3@1x.jpg 1x, img/slide_mobile_3@2x.jpg 2x" media="(max-width: 767px)"> -->
               <source srcset="img/slide_tablet_3@1x.jpg 1x, img/slide_tablet_3@2x.jpg 2x" media="(max-width: 1023px)">
-              <source type="image/webp" srcset="img/slide_desktop_3@1x.webp 1x, img/slide_desktop_3@2x.webp 2x">
               <img  class="slider__slide slider__slide--hidden" src="img/slide_desktop_3@1x.jpg" srcset="img/slide_desktop_3@2x.jpg 2x" width="600" height="375" alt="Изображение автомобиля">
             </picture>
           </div>
@@ -127,8 +125,8 @@
       </div>
       <div class="promo__tabs tabs">
           <ul class="tabs__list">
-            <li class="tabs__item">
-              <h3 class="tabs__link tabs__link--active" tabindex="0">Характеристики</h3>
+            <li class="tabs__item" tabindex="0">
+              <h3 class="tabs__link tabs__link--active">Характеристики</h3>
             </li>
             <li class="tabs__item" tabindex="0">
               <h3 class="tabs__link">Отзывы</h3>
@@ -299,7 +297,10 @@
             </ul>
             <div class="contacts__map" id="map">
               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4647.659677103179!2d30.316418610553544!3d59.967158711892154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696315bc4e8ce61%3A0xe703c377f3424272!2sStudio%20212!5e0!3m2!1sru!2sde!4v1595582063339!5m2!1sru!2sde" width="431" height="271" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-              <img src="img/map_desktop.jpg" alt="Геолокация интернет-магазина Avto-Moto" width="431" height="271">
+              <!-- <picture>
+                <source srcset="img/map_mobile.jpg" media="(max-width: 767px)">
+                <img src="img/map_desktop.jpg" alt="Геолокация интернет-магазина Avto-Moto" width="431" height="271">
+              </picture> -->
             </div>
           </div>
       </div>
