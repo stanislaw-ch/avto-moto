@@ -188,26 +188,19 @@
       for (var i = 0; i < tabsElement.length; i++) {
         tabsElement[i].classList.add('tabs__element--hidden');
       }
-
       for (var j = 0; j < tabslink.length; j++) {
         tabslink[j].classList.remove('tabs__link--active');
       }
-
       hideTab.classList.remove('tabs__element--hidden');
       onClickTab.classList.add('tabs__link--active');
-
       if (Array.from(tabsElement).indexOf(hideTab) === 0) {
         tabsList.style.left = '0px';
       }
-
       if (Array.from(tabsElement).indexOf(hideTab) === 1) {
-        // tabsList.style.left = '50%';
-        tabsList.style.left = '-200px';
-        // tabsList.style.marginLeft = '-293px';
+        tabsList.style.left = '-148px';
       }
-
       if (Array.from(tabsElement).indexOf(hideTab) === 2) {
-        tabsList.style.left = '-310px';
+        tabsList.style.left = '-295px';
       }
     });
   };
