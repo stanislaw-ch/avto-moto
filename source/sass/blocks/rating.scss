@@ -57,3 +57,20 @@
   line-height: 20px;
   color: #000000;
 }
+
+@media (max-width: 699px) {
+  .rating {
+    // margin-bottom: 10px;
+
+    &__wrapper {
+      flex-direction: column;
+      justify-content: center;
+
+      padding-top: 0;
+    }
+
+    & p {
+      margin-bottom: 10px;
+    }
+  }
+}
