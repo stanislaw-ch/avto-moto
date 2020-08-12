@@ -1,6 +1,4 @@
 .promo {
-  position: relative;
-
   &__new {
     position: absolute;
     box-sizing: border-box;
@@ -31,6 +29,10 @@
     margin-bottom: 89px;
   }
 
+  &__slider {
+    position: relative;
+  }
+
   &__card {
     margin-left: 54px;
   }
@@ -46,14 +48,6 @@
     &__wrapper {
       flex-direction: column;
       margin-bottom: 29px;
-    }
-
-    &__slider {
-      // display: flex;
-      // justify-content: center;
-      // flex-wrap: wrap;
-      margin: 0 auto;
-      // margin-bottom: 66px;
     }
 
     &__card {
@@ -82,6 +76,7 @@
     // }
 
     &__tabs {
+      position: relative;
       margin-bottom: 39px;
       // padding-left: 0;
     }

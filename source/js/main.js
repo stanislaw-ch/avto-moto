@@ -14,6 +14,7 @@
   var sliderThumbsCurrent = sliderThumbsList.querySelector('.slider__item--current');
 
   var tabs = document.querySelector('.promo__tabs');
+  var tabsList = tabs.querySelector('.tabs__list');
   var tabslink = tabs.querySelectorAll('.tabs__link');
   var tabsElement = tabs.querySelectorAll('.tabs__element');
 
@@ -192,6 +193,15 @@
       }
       hideTab.classList.remove('tabs__element--hidden');
       onClickTab.classList.add('tabs__link--active');
+      if (Array.from(tabsElement).indexOf(hideTab) === 0) {
+        tabsList.style.left = '0px';
+      }
+      if (Array.from(tabsElement).indexOf(hideTab) === 1) {
+        tabsList.style.left = '-148px';
+      }
+      if (Array.from(tabsElement).indexOf(hideTab) === 2) {
+        tabsList.style.left = '-295px';
+      }
     });
   };
 

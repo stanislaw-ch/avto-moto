@@ -3,7 +3,7 @@
 
   &__list {
     margin: 0;
-    padding: 0;
+    padding: 30px 0 10px 0;
     list-style: none;
   }
 
@@ -13,7 +13,8 @@
   }
 
   &__item a {
-    margin-right: 72px;
+    margin-right: 66px;
+    margin-bottom: 20px;
     color: #48494d;
   }
 
@@ -35,7 +36,7 @@
 
   &__wrapper {
     display: flex;
-    align-items: center;
+    // align-items: center;
     justify-content: start;
     box-sizing: border-box;
     min-height: 82px;
@@ -49,6 +50,12 @@
       align-items: flex-start;
       min-height: 166px;
       padding: 30px 0;
+    }
+
+    &__list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
     }
 
     &__item {

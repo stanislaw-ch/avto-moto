@@ -75,10 +75,17 @@
 @media (max-width: 767px) {
   .tabs {
     // display: none;
+    padding-top: 72px;
+
     &__list {
-      // position: absolute;
-      margin-bottom: 20px;
-      // z-index: 2;
+      position: absolute;
+      // margin-bottom: 20px;
+      top: 0;
+      z-index: 1;
+    }
+
+    &__item {
+      min-width: 195px;
     }
 
     &__link {
