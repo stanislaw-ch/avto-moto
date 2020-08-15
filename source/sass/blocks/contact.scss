@@ -58,7 +58,12 @@
 @media (max-width: 1023px) {
   .contacts {
     width: 100%;
+    min-height: 283px;
     padding-top: 0;
+
+    // &__map iframe {
+    //   height: 283px;
+    // }
 
     &__map img {
       top: 0;
