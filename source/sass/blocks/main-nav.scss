@@ -6,6 +6,10 @@
 
   padding: 14px 27px 10px 25px;
 
+  &__list {
+    display: flex;
+  }
+
   &__toggle {
     display: none;
   }
@@ -23,8 +27,13 @@
   .main-nav {
     flex-direction: column;
     align-items: flex-start;
-    justify-content: center;
-    padding: 0 16px;
+    // justify-content: center;
+    padding: 10px 16px;
+
+    &__list {
+      flex-direction: column;
+      align-items: flex-start;
+    }
 
     &__logo {
       margin-left: 0;

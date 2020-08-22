@@ -3,6 +3,9 @@
   padding: 0 20px;
 
   &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     margin: 0;
     padding: 30px 0 10px 0;
     list-style: none;
@@ -11,8 +14,6 @@
 
   &__item {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
   }
 
   &__item a {
@@ -59,31 +60,27 @@
       list-style: none;
     }
 
-    &__item {
-      justify-content: space-between;
-    }
-
     &__item a {
       width: auto;
       margin-right: 0;
       margin-bottom: 20px;
     }
 
-    &__item a:last-child {
+    &__item:last-child a {
       margin-bottom: 0;
     }
 
-    &__item a:nth-child(3n+1) {
+    &__item:nth-child(3n+1) a {
       margin-right: 120px;
       width: 218px;
     }
 
-    &__item a:nth-child(3n+2) {
+    &__item:nth-child(3n+2) a {
       margin-right: 120px;
       width: 141px;
     }
 
-    &__item a:nth-child(3n) {
+    &__item:nth-child(3n) a {
       margin-right: 0;
       width: 101px;
     }
@@ -96,8 +93,9 @@
       padding: 25px 0;
     }
 
-    &__item {
+    &__list {
       justify-content: center;
+      flex-direction: column;
     }
 
     &__item a {
@@ -108,21 +106,21 @@
       text-align: center;
     }
 
-    &__item a:last-child {
+    &__item:last-child a {
       margin-bottom: 0;
     }
 
-    &__item a:nth-child(3n+1) {
+    &__item:nth-child(3n+1) a {
       margin-right: 0;
       width: 100%;
     }
 
-    &__item a:nth-child(3n+2) {
+    &__item:nth-child(3n+2) a {
       margin-right: 0;
       width: 100%;
     }
 
-    &__item a:nth-child(3n) {
+    &__item:nth-child(3n) a {
       margin-right: 0;
       width: 100%;
     }
