@@ -1,19 +1,21 @@
 .page-footer {
   background-color: #f5f5f9;
+  padding: 0 20px;
 
   &__list {
     margin: 0;
     padding: 30px 0 10px 0;
     list-style: none;
+    width: 100%;
   }
 
   &__item {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
   }
 
   &__item a {
-    margin-right: 66px;
     margin-bottom: 20px;
     color: #48494d;
   }
@@ -36,7 +38,6 @@
 
   &__wrapper {
     display: flex;
-    // align-items: center;
     justify-content: start;
     box-sizing: border-box;
     min-height: 82px;
@@ -59,7 +60,7 @@
     }
 
     &__item {
-      justify-content: flex-start;
+      justify-content: space-between;
     }
 
     &__item a {
@@ -92,8 +93,6 @@
 @media (max-width: 767px) {
   .page-footer {
     &__wrapper {
-      // align-items: center;
-      // min-height: 166px;
       padding: 25px 0;
     }
 

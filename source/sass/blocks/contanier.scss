@@ -1,23 +1,5 @@
 .contanier {
-  // max-width: 1180px;
   box-sizing: border-box;
   margin: 0 auto;
   max-width: 1180px;
-}
-
-@media (max-width: 1023px) {
-  .contanier {
-    // width: 100%;
-    // min-width: 320px;
-    margin: 0 20px;
-    // width: 726px;
-    // margin: 0 auto;
-  }
-}
-
-@media (max-width: 767px) {
-  .contanier {
-    // width: auto;
-    margin: 0 16px;
-  }
 }

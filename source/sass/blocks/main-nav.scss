@@ -4,15 +4,7 @@
   justify-content: space-between;
   box-sizing: border-box;
 
-  padding: 14px 7px 10px 5px;
-
-  // &__logo {
-  // }
-  // &__list {
-  //   &--closed {
-  //     display: none;
-  //   }
-  // }
+  padding: 14px 27px 10px 25px;
 
   &__toggle {
     display: none;
@@ -23,10 +15,7 @@
   .main-nav {
     position: relative;
     min-height: 75px;
-    padding: 0;
-    // &__list {
-    //   width: auto;
-    // }
+    padding: 0 20px;
   }
 }
 
@@ -35,10 +24,11 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
+    padding: 0 16px;
 
     &__logo {
-      margin-left: -6px;
-      padding: 7px 0;
+      margin-left: 0;
+      padding: 0;
     }
 
     &--closed .main-nav__toggle::before {
@@ -94,7 +84,7 @@
     &__toggle {
       position: absolute;
       top: 28px;
-      right: 7px;
+      right: 16px;
 
       display: block;
       width: 29px;

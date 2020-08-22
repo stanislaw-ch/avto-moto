@@ -6,12 +6,15 @@
 
   &__button {
     position: absolute;
-    top: 20px;
+
+    width: 200px;
+    top: -60px;
     right: 2px;
     z-index: 1;
 
-    color: #d12136;
-    border: 1px solid #d12136;
+    color: #48494d;
+    border: 1px solid #d7d9df;
+
     background: none;
 
     cursor: pointer;
@@ -174,6 +177,7 @@
     &__button {
       top: 0;
       left: 0;
+      width: 33.3%;
     }
 
     & h3 {
@@ -215,7 +219,6 @@
 
 @media (max-width: 767px) {
   .reviews {
-    // width: 100%;
     padding-top: 83px;
 
     &__button {
@@ -225,50 +228,19 @@
       margin-left: 0;
     }
 
-    // & h3 {
-    //   margin: 0 0 10px 0;
-
-    //   font-size: 15px;
-    //   line-height: 20px;
-    // }
-
     &__opinion {
       & p:last-child {
         margin: 0 0 13px 0;
       }
     }
-
-    // &__title {
-    //   &--comment {
-    //     display: none;
-    //   }
-
-    //   &--advantages,
-    //   &--disadvantages {
-    //     display: none;
-    //   }
-    // }
-
-    // &__description {
-    //   &--advantages,
-    //   &--disadvantages {
-    //     display: none;
-    //   }
-    // }
-
-    // &__rating {
-    //   margin-bottom: 31px;
-    // }
   }
 }
 
-@media (max-width: 613px) {
+@media (max-width: 675px) {
   .reviews {
     &__button {
       top: 0;
-      left: 50%;
-
-      margin-left: -95px;
+      width: 225px;
     }
   }
 }

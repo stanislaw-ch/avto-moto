@@ -1,6 +1,6 @@
 .card {
   &__title {
-    margin: -10px 0 26px 3px;
+    margin: 5px 0 26px 3px;
 
     font-weight: bold;
     font-size: 30px;
@@ -127,24 +127,6 @@
       &--gear-box {
         left: 21px;
       }
-
-      // &--power-ps {
-      //   left: 9px;
-
-      //   width: 40px;
-      //   height: 40px;
-
-      //   background-image: url("../img/icon_power-ps.svg");
-      // }
-
-      // &--engine-disp {
-      //   left: 0;
-
-      //   width: 40px;
-      //   height: 40px;
-
-      //   background-image: url("../img/icon_engine-disp.svg");
-      // }
     }
 
     &__price {
@@ -155,7 +137,6 @@
 
     &__order {
       flex-wrap: wrap;
-      // flex-direction: column;
     }
   }
 }

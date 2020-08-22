@@ -4,13 +4,8 @@
   }
 
   &__list {
-    width: 566px;
+    width: 600px;
   }
-
-  // &__list tr {
-  //   border-spacing: 0;
-  //   border-collapse: collapse;
-  // }
 
   &__field {
     padding: 17px 0 8px 0;
@@ -48,12 +43,6 @@
 
 @media (max-width: 767px) {
   .features {
-    // padding-top: 6px;
-
-    // &__list {
-    //   width: 100%;
-    // }
-
     &__field {
       padding: 16px 0 15px 0;
     }

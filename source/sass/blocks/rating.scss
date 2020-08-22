@@ -28,9 +28,6 @@
     fill: #bdbec2;
     fill-opacity: 0.7;
 
-    // background-image: url("../img/icon_rating-star.svg");
-
-
     &--modal {
       width: 27px;
       height: 27px;
@@ -60,8 +57,6 @@
 
 @media (max-width: 699px) {
   .rating {
-    // margin-bottom: 10px;
-
     &__wrapper {
       flex-direction: column;
       justify-content: center;
