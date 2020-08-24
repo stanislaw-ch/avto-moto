@@ -197,10 +197,10 @@
         tabsList.style.left = '0px';
       }
       if (Array.from(tabsElement).indexOf(hideTab) === 1) {
-        tabsList.style.left = '-225px';
+        tabsList.style.left = '-230px';
       }
       if (Array.from(tabsElement).indexOf(hideTab) === 2) {
-        tabsList.style.left = '-450px';
+        tabsList.style.left = '-460px';
       }
     });
   };
